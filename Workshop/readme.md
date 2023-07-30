@@ -2,9 +2,9 @@
 
 # Design and Develop a Serverless Event-Driven Microservice-Based Solution Workshop
 
-You have heard all the buzzwords such as microservices, event-driven architecture, serverless, etc. You probably have attended sessions that talked about these terms.  But how do you put all that together?
+You have heard all the buzzwords such as microservices, event-driven architecture, serverless, etc.  You probably have attended sessions that talked about these terms.  But how do you put all that together?
 
-In this full-day hands-on workshop, attendees will dive into the exciting world of serverless event-driven microservices using Azure and C#. This comprehensive training session is designed to equip developers with the knowledge and practical skills to architect, build, and deploy scalable, efficient, and cost-effective serverless solutions on Microsoft's Azure cloud platform.
+In this full-day hands-on workshop, attendees will dive into the exciting world of serverless event-driven microservices using Azure and C#.  This comprehensive training session will equip developers with the knowledge and practical skills to architect, build, and deploy scalable, efficient, and cost-effective serverless solutions on Microsoft's Azure cloud platform.
 
 ## Workshop Content:
 
@@ -39,7 +39,7 @@ In this full-day hands-on workshop, attendees will dive into the exciting world 
    - Identifying common pitfalls and best practices from industry experts.
 
 ## Technologies and Services
-The following technologies and services will be levered in this workshop (subject to change):
+This workshop leverages the following technologies and services (subject to change):
 
 - [Azure App Configuration](https://azure.microsoft.com/en-us/products/app-configuration/)
 - [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/)
@@ -53,10 +53,10 @@ The following technologies and services will be levered in this workshop (subjec
 ## Prerequisites:
 
 - Basic understanding of C# programming language and .NET ecosystem.
-- Familiarity with cloud computing concepts and Azure services is beneficial but not mandatory.
-- Attendees should bring their own laptops with administrative privileges and have the Azure SDK installed (a guide will be provided before the workshop).
+- Familiarity with cloud computing concepts and Azure services is beneficial but optional.
+- Attendees should bring their laptops with administrative privileges and have the software listed below installed.
 
-In order to participate in the hands-on exercises, please have the following installed and ready to go before the workshop day:
+To participate in the hands-on exercises, please have the following installed and ready to go before the workshop day:
 
 - Visual Studio Community 2022 or better; [available here](https://visualstudio.microsoft.com/vs/)
 - Visual Studio Code (optional/instead of Visual Studio 2022); [available here](https://code.visualstudio.com/)
@@ -67,14 +67,14 @@ In order to participate in the hands-on exercises, please have the following ins
 - PostMan; [available here](https://www.postman.com/downloads/)
 - SendGrid account; [available here](https://signup.sendgrid.com/)
 
-> **Note:** Please understand that we cannot spend time setting up your machine and getting subscriptions as the workshop has too much material to spend time on these tasks.  Please try to arrive for thw orkshop with a machine, Azure subscription, and GitHub account that you can use from the venue WiFi.
+> **Note:** Please understand that we cannot spend time setting up your machine and getting subscriptions as the workshop has too much material to spend time on these tasks.  Please arrive for the workshop with a device, Azure subscription, and GitHub account that you can use from the venue WiFi.
 
-Join us for this immersive workshop and unlock the potential of serverless event-driven microservices on Azure. By the end of the day, you will have the confidence and expertise to build scalable and event-driven solutions that can revolutionize the way you approach modern application development.
+Join us for this immersive workshop and unlock the potential of serverless event-driven microservices on Azure.  By the end of the day, you will have the confidence and expertise to build scalable and event-driven solutions that can revolutionize the way you approach modern application development.
 
 ## Scenario
-Building Bricks, a company specializing in the retain of LEGO products, intends to establish a robust and efficient ecommerce system to enhance their online presence, improve customer experience, and increase sales revenue.  Your company has been hired to build this solution for them and your team is responsible for the backend components.
+Building Bricks, a company specializing in the retention of LEGO products, intends to establish a robust and efficient e-commerce system to enhance its online presence, improve customer experience, and increase sales revenue.  Your company has been hired to build this solution for them, and your team is responsible for the backend components.
 
-In the process of building the backend, you will build the following microservices:
+In the process of building the backend, you will create the following microservices:
 
 - **Product Management:** Responsible for managing product information.
 - **Order Management:** Handles order placement and processing.
