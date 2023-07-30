@@ -1,3 +1,5 @@
+![DesignDevelopServerlessEventDrivenMicroserviceSolution](https://github.com/TaleLearnCode/DesignDevelopServerlessEventDrivenMicroserviceSolution/blob/main/Thumbnail.png)
+
 # Design and Develop a Serverless Event-Driven Microservice-Based Solution Workshop
 
 You have heard all the buzzwords such as microservices, event-driven architecture, serverless, etc. You probably have attended sessions that talked about these terms.  But how do you put all that together?

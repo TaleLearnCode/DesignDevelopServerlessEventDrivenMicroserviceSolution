@@ -14,20 +14,49 @@ Hands-on full-day workshop where you will design, develop, and publish a serverl
 * Full-day workshop
 
 ## Tags
-* .NET
-* APIs
-* Architecture
-* Azure
-* Azure Functions
-* C#
-* Cloud
-* Cloud-Native
-* Event-Driven Architecture
-* Microsrevices
-* Microsoft
-* REST
-* Serverless
-* Software Design
+-	.NET
+-	APIs
+-	Application Development
+-	Architecture
+-	Azure
+-	Azure Event Hubs
+-	Azure Functions
+-	Azure Service Bus
+-	C#
+-	Cloud
+-	Cloud Architecture
+-	Cloud Computing
+-	Cloud Development
+-	Cloud Integration
+-	Cloud Resources
+-	Cloud Services
+-	Cloud Solutions
+-	Cloud-Native
+-	Cloud-Native Services
+-	Event Processing
+-	Event-driven
+-	Event-Driven Architecture
+-	Event-Driven Solutions
+-	Hands-on Training
+-	Hands-on Workshop
+-	Microservices
+-	Microsoft
+-	Microsoft Azure
+-	Microservices
+-	Performance Optimization
+-	Real-Time Event Processing
+-	Reliability
+-	REST
+-	Scalability
+-	Scalable Architectures
+-	Security
+-	Serverless
+-	Serverless Computing
+-	Software Design
+-	Software Development
+-	Technology
+-	Training
+-	Workshop
 
 ## Learning Objectives
 * Understand the different serverless, event-driven cloud services and how to put them together to build a cohesive microservice-based architecture
