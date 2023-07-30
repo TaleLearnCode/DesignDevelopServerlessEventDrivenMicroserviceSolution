@@ -40,3 +40,4 @@ Hands-on full-day workshop where you will design, develop, and publish a serverl
 |-------|:--------:|-----:|-----:|-----:|----------:|
 | [Beer City Code](https://www.beercitycode.com/) | Grand Rapids, MI | August 4, 2023 | 9:00 am EDT | Room 264 | Available Afterwards |
 | [dev up](https://www.devupconf.org/) | St. Charles, MO | August 30, 2023 | 8:30 am CDT| Junior Ballroom C | Available Afterwards |
+| [TechBash](https://techbash.com/) | Pocono Manor, PA | November 7, 2023 | TBA | TBA | Availalbe Afterwards |
