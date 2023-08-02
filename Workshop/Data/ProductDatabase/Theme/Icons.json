@@ -8,7 +8,7 @@
       "pieces": 1495,
       "price": 229.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -17,7 +17,7 @@
       "pieces": 9090,
       "price": 679.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -26,7 +26,7 @@
       "pieces": 9036,
       "price": 549.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -35,7 +35,7 @@
       "pieces": 2504,
       "price": 199.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -44,7 +44,7 @@
       "pieces": 4002,
       "price": 299.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -53,7 +53,7 @@
       "pieces": 2048,
       "price": 179.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -62,7 +62,7 @@
       "pieces": 1173,
       "price": 99.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -71,7 +71,7 @@
       "pieces": 1677,
       "price": 129.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -80,7 +80,7 @@
       "pieces": 3231,
       "price": 299.99,
       "hardToFind": true,
-      "availabilityId": 3,
+      "availabilityId": "3",
       "availability": "Backordered"
     },
     {
@@ -89,7 +89,7 @@
       "pieces": 608,
       "price": 49.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -98,7 +98,7 @@
       "pieces": 1445,
       "price": 99.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -107,7 +107,7 @@
       "pieces": 284,
       "price": 19.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -116,7 +116,7 @@
       "pieces": 1471,
       "price": 169.99,
       "hardToFind": false,
-      "availabilityId": 2,
+      "availabilityId": "2",
       "availability": "Temporary out of stock"
     },
     {
@@ -125,7 +125,7 @@
       "pieces": 1363,
       "price": 109.99,
       "hardToFind": false,
-      "availabilityId": 4,
+      "availabilityId": "4",
       "availability": "Coming Soon"
     },
     {
@@ -134,7 +134,7 @@
       "pieces": 1254,
       "price": 99.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -143,7 +143,7 @@
       "pieces": 5876,
       "price": 399.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -152,7 +152,7 @@
       "pieces": 2532,
       "price": 239.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -161,7 +161,7 @@
       "pieces": 1210,
       "price": 149.99,
       "hardToFind": false,
-      "availabilityId": 4,
+      "availabilityId": "4",
       "availability": "Coming Soon"
     },
     {
@@ -170,7 +170,7 @@
       "pieces": 812,
       "price": 149.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -179,7 +179,7 @@
       "pieces": 2509,
       "price": 214.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -188,7 +188,7 @@
       "pieces": 2336,
       "price": 239.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -197,7 +197,7 @@
       "pieces": 6167,
       "price": 499.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -206,7 +206,7 @@
       "pieces": 2651,
       "price": 269.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -215,7 +215,7 @@
       "pieces": 878,
       "price": 49.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -224,7 +224,7 @@
       "pieces": 4514,
       "price": 399.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -233,7 +233,7 @@
       "pieces": 2899,
       "price": 229.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -242,7 +242,7 @@
       "pieces": 1107,
       "price": 99.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -251,7 +251,7 @@
       "pieces": 3756,
       "price": 399.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -260,7 +260,7 @@
       "pieces": 1456,
       "price": 169.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     },
     {
@@ -269,7 +269,7 @@
       "pieces": 10001,
       "price": 629.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Available now"
     }
   ]

@@ -8,7 +8,7 @@
       "pieces": 1265,
       "price": 99.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -17,7 +17,7 @@
       "pieces": 2065,
       "price": 299.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -26,7 +26,7 @@
       "pieces": 1164,
       "price": 119.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -35,7 +35,7 @@
       "pieces": 2079,
       "price": 249.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -44,7 +44,7 @@
       "pieces": 3955,
       "price": 299.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -53,7 +53,7 @@
       "pieces": 3036,
       "price": 249.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -62,7 +62,7 @@
       "pieces": 3662,
       "price": 399.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -71,7 +71,7 @@
       "pieces": 2585,
       "price": 229.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -80,7 +80,7 @@
       "pieces": 1606,
       "price": 99.99,
       "hardToFind": false,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -89,7 +89,7 @@
       "pieces": 2164,
       "price": 179.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     },
     {
@@ -98,7 +98,7 @@
       "pieces": 749,
       "price": 99.99,
       "hardToFind": true,
-      "availabilityId": 1,
+      "availabilityId": "1",
       "availability": "Availalbe now"
     }
   ]
