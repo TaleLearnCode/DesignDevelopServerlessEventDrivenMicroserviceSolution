@@ -11,6 +11,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inventory Management", "Inv
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "IM.Database", "Inventory Management\IM.Database\IM.Database.sqlproj", "{F0225AB4-2836-492A-B0E2-6A0B0667E555}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order Management", "Order Management", "{0B879EDA-4DC3-4632-81D3-5F3807E070F3}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "OM.Database", "Order Management\OM.Database\OM.Database.sqlproj", "{FE682F58-F6CA-4E1D-8DED-66BC07BA3972}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shipping Management", "Shipping Management", "{B847CBC3-2B9F-46AE-8082-F37F9EDBAFC0}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SM.Database", "Shipping Management\SM.Database\SM.Database.sqlproj", "{5A4BB707-FB63-40A1-9AF9-A3553CD30C02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notification Management", "Notification Management", "{B7FAFCDD-492F-462B-94EA-59602F55033A}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "NM.Database", "Notification Management\NM.Database\NM.Database.sqlproj", "{CF531B50-3AA2-44F8-A82B-D21F479CA781}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +39,24 @@ Global
 		{F0225AB4-2836-492A-B0E2-6A0B0667E555}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0225AB4-2836-492A-B0E2-6A0B0667E555}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F0225AB4-2836-492A-B0E2-6A0B0667E555}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FE682F58-F6CA-4E1D-8DED-66BC07BA3972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE682F58-F6CA-4E1D-8DED-66BC07BA3972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE682F58-F6CA-4E1D-8DED-66BC07BA3972}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FE682F58-F6CA-4E1D-8DED-66BC07BA3972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE682F58-F6CA-4E1D-8DED-66BC07BA3972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE682F58-F6CA-4E1D-8DED-66BC07BA3972}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5A4BB707-FB63-40A1-9AF9-A3553CD30C02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A4BB707-FB63-40A1-9AF9-A3553CD30C02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A4BB707-FB63-40A1-9AF9-A3553CD30C02}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5A4BB707-FB63-40A1-9AF9-A3553CD30C02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A4BB707-FB63-40A1-9AF9-A3553CD30C02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A4BB707-FB63-40A1-9AF9-A3553CD30C02}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CF531B50-3AA2-44F8-A82B-D21F479CA781}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF531B50-3AA2-44F8-A82B-D21F479CA781}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF531B50-3AA2-44F8-A82B-D21F479CA781}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CF531B50-3AA2-44F8-A82B-D21F479CA781}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF531B50-3AA2-44F8-A82B-D21F479CA781}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF531B50-3AA2-44F8-A82B-D21F479CA781}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +64,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FFC24FE7-3A60-4EBB-B9AE-467B8B272E51} = {301D6075-6E8E-448B-B4E1-2667538C599E}
 		{F0225AB4-2836-492A-B0E2-6A0B0667E555} = {535EEF89-F922-4C50-B714-184DBDAD6597}
+		{FE682F58-F6CA-4E1D-8DED-66BC07BA3972} = {0B879EDA-4DC3-4632-81D3-5F3807E070F3}
+		{5A4BB707-FB63-40A1-9AF9-A3553CD30C02} = {B847CBC3-2B9F-46AE-8082-F37F9EDBAFC0}
+		{CF531B50-3AA2-44F8-A82B-D21F479CA781} = {B7FAFCDD-492F-462B-94EA-59602F55033A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46272F77-407E-4A65-AD1C-3B1479BE63E0}
