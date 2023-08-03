@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BuildingBricks.OM
 {
-
 	public partial class OrderManagementContext : DbContext
 	{
+
 		public OrderManagementContext()
 		{
 		}
@@ -38,27 +38,27 @@ namespace BuildingBricks.OM
 				entity.Property(e => e.City).HasMaxLength(100);
 
 				entity.Property(e => e.CountryCode)
-									.HasMaxLength(2)
-									.IsUnicode(false)
-									.IsFixedLength();
+						.HasMaxLength(2)
+						.IsUnicode(false)
+						.IsFixedLength();
 
 				entity.Property(e => e.CountryDivisionCode)
-									.HasMaxLength(2)
-									.IsUnicode(false)
-									.IsFixedLength();
+						.HasMaxLength(2)
+						.IsUnicode(false)
+						.IsFixedLength();
 
 				entity.Property(e => e.EmailAddress)
-									.HasMaxLength(255)
-									.IsUnicode(false)
-									.HasColumnName("EMailAddress");
+						.HasMaxLength(255)
+						.IsUnicode(false)
+						.HasColumnName("EMailAddress");
 
 				entity.Property(e => e.FirstName).HasMaxLength(100);
 
 				entity.Property(e => e.LastName).HasMaxLength(100);
 
 				entity.Property(e => e.PostalCode)
-									.HasMaxLength(20)
-									.IsUnicode(false);
+						.HasMaxLength(20)
+						.IsUnicode(false);
 
 				entity.Property(e => e.StreetAddress).HasMaxLength(100);
 			});
@@ -68,9 +68,9 @@ namespace BuildingBricks.OM
 				entity.ToTable("CustomerOrder", "OrderManagement");
 
 				entity.Property(e => e.CustomerOrderId)
-									.HasMaxLength(36)
-									.IsUnicode(false)
-									.IsFixedLength();
+						.HasMaxLength(36)
+						.IsUnicode(false)
+						.IsFixedLength();
 
 				entity.Property(e => e.OrderDateTime).HasDefaultValueSql("(getutcdate())");
 
@@ -82,25 +82,36 @@ namespace BuildingBricks.OM
 				entity.ToTable("OrderItem", "OrderManagement");
 
 				entity.Property(e => e.CustomerOrderId)
-									.HasMaxLength(36)
-									.IsUnicode(false)
-									.IsFixedLength();
+						.HasMaxLength(36)
+						.IsUnicode(false)
+						.IsFixedLength();
 
 				entity.Property(e => e.DateTimeAdded).HasDefaultValueSql("(getutcdate())");
 
 				entity.Property(e => e.OrderStatusId).HasDefaultValueSql("((1))");
 
+				entity.Property(e => e.ProductId)
+						.HasMaxLength(5)
+						.IsUnicode(false)
+						.IsFixedLength();
+
 				entity.HasOne(d => d.CustomerOrder)
-									.WithMany(p => p.OrderItems)
-									.HasForeignKey(d => d.CustomerOrderId)
-									.OnDelete(DeleteBehavior.ClientSetNull)
-									.HasConstraintName("fkOrderItem_CustomerOrder");
+						.WithMany(p => p.OrderItems)
+						.HasForeignKey(d => d.CustomerOrderId)
+						.OnDelete(DeleteBehavior.ClientSetNull)
+						.HasConstraintName("fkOrderItem_CustomerOrder");
 
 				entity.HasOne(d => d.OrderStatus)
-									.WithMany(p => p.OrderItems)
-									.HasForeignKey(d => d.OrderStatusId)
-									.OnDelete(DeleteBehavior.ClientSetNull)
-									.HasConstraintName("fkOrderItem_OrderStatus");
+						.WithMany(p => p.OrderItems)
+						.HasForeignKey(d => d.OrderStatusId)
+						.OnDelete(DeleteBehavior.ClientSetNull)
+						.HasConstraintName("fkOrderItem_OrderStatus");
+
+				entity.HasOne(d => d.Product)
+						.WithMany(p => p.OrderItems)
+						.HasForeignKey(d => d.ProductId)
+						.OnDelete(DeleteBehavior.ClientSetNull)
+						.HasConstraintName("fkOrderItem_Product");
 			});
 
 			modelBuilder.Entity<OrderStatus>(entity =>
@@ -110,8 +121,8 @@ namespace BuildingBricks.OM
 				entity.Property(e => e.OrderStatusId).ValueGeneratedNever();
 
 				entity.Property(e => e.OrderStatusName)
-									.HasMaxLength(100)
-									.IsUnicode(false);
+						.HasMaxLength(100)
+						.IsUnicode(false);
 			});
 
 			modelBuilder.Entity<Product>(entity =>
@@ -119,9 +130,9 @@ namespace BuildingBricks.OM
 				entity.ToTable("Product", "OrderManagement");
 
 				entity.Property(e => e.ProductId)
-									.HasMaxLength(5)
-									.IsUnicode(false)
-									.IsFixedLength();
+						.HasMaxLength(5)
+						.IsUnicode(false)
+						.IsFixedLength();
 
 				entity.Property(e => e.Price).HasColumnType("smallmoney");
 

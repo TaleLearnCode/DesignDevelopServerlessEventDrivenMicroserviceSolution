@@ -3,6 +3,7 @@
   OrderItemId      INT       NOT NULL IDENTITY(1,1),
   CustomerOrderId  CHAR(36)  NOT NULL,
   ProductId        CHAR(5)   NOT NULL,
+  Quantity         INT       NOT NULL,
   OrderStatusId    INT       NOT NULL CONSTRAINT dfOrderItem_OrderStatusId DEFAULT(1),
   DateTimeAdded    DATETIME2 NOT NULL CONSTRAINT dfOrderItem_DateTimeAdded DEFAULT(GETUTCDATE()),
   DateTimeModified DATETIME2     NULL,

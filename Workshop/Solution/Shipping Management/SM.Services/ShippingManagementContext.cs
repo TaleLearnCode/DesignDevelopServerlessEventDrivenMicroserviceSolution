@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BuildingBricks.SM
 {
+
 	public partial class ShippingManagementContext : DbContext
 	{
 		public ShippingManagementContext()

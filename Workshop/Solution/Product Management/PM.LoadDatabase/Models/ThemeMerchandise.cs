@@ -1,5 +1,7 @@
 ﻿namespace BuildingBricks.PM.Models;
 
+#nullable disable
+
 public class ThemeMerchandise
 {
 
