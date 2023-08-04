@@ -1,0 +1,78 @@
+{
+  "id": "629",
+  "name": "Architecture",
+  "merchandises": [
+    {
+      "itemNumber": "21058",
+      "itemName": "Great Pryramid of Giza",
+      "pieces": 1476,
+      "price": 129.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "21056",
+      "itemName": "Taj Mahal",
+      "pieces": 2022,
+      "price": 119.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "21028",
+      "itemName": "New York City",
+      "pieces": 598,
+      "price": 59.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "21034",
+      "itemName": "London",
+      "pieces": 468,
+      "price": 39.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "21044",
+      "itemName": "Paris",
+      "pieces": 649,
+      "price": 49.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "21054",
+      "itemName": "The White House",
+      "pieces": 1685,
+      "price": 99.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "21057",
+      "itemName": "Singapore",
+      "pieces": 827,
+      "price": 59.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "21042",
+      "itemName": "Statue of Liberty",
+      "pieces": 1685,
+      "price": 119.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "id": "1068",
+  "name": "LEGO Icons",
+  "merchandises": [
+    {
+      "itemNumber": "10297",
+      "itemName": "Boutique Hotel",
+      "pieces": 1495,
+      "price": 229.99,
+      "hardToFind": true,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "10294",
+      "itemName": "LEGO® Titanic",
+      "pieces": 9090,
+      "price": 679.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "10276",
+      "itemName": "Colosseum",
+      "pieces": 9036,
+      "price": 549.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "10270",
+      "itemName": "Bookshop",
+      "pieces": 2504,
+      "price": 199.99,
+      "hardToFind": true,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "10255",
+      "itemName": "Assemlby Square",
+      "pieces": 4002,
+      "price": 299.99,
+      "hardToFind": true,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "10292",
+      "itemName": "The Friends Apartments",
+      "pieces": 2048,
+      "price": 179.99,
+      "hardToFind": true,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "10289",
+      "itemName": "Bird of Paradise",
+      "pieces": 1173,
+      "price": 99.99,
+      "hardToFind": true,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "10290",
+      "itemName": "Pickup Truck",
+      "pieces": 1677,
+      "price": 129.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "10273",
+      "itemName": "Haunted House",
+      "pieces": 3231,
+      "price": 299.99,
+      "hardToFind": true,
+      "availabilityId": "3",
+      "availability": "Backordered"
+    },
+    {
+      "itemNumber": "10311",
+      "itemName": "Orchid",
+      "pieces": 608,
+      "price": 49.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "10293",
+      "itemName": "Santa's Visit'",
+      "pieces": 1445,
+      "price": 99.99,
+      "hardToFind": true,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "40518",
+      "itemName": "High Speed Train",
+      "pieces": 284,
+      "price": 19.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Availalbe now"
+    },
+    {
+      "itemNumber": "10265",
+      "itemName": "Ford Mustang",
+      "pieces": 1471,
+      "price": 169.99,
+      "hardToFind": false,
+      "availabilityId": "2",
+      "availability": "Temporary out of stock"
+    },
+    {
+      "itemNumber": "10315",
+      "itemName": "Tranquil Garden",
+      "pieces": 1363,
+      "price": 109.99,
+      "hardToFind": false,
+      "availabilityId": "4",
+      "availability": "Coming Soon"
+    },
+    {
+      "itemNumber": "10497",
+      "itemName": "Galaxy Explorer",
+      "pieces": 1254,
+      "price": 99.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10299",
+      "itemName": "Real Madrid – Santiago Bernabéu Stadium",
+      "pieces": 5876,
+      "price": 399.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10306",
+      "itemName": "Atari® 2600",
+      "pieces": 2532,
+      "price": 239.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10321",
+      "itemName": "Corvette",
+      "pieces": 1210,
+      "price": 149.99,
+      "hardToFind": false,
+      "availabilityId": "4",
+      "availability": "Coming Soon"
+    },
+    {
+      "itemNumber": "10314",
+      "itemName": "Dried Flower Centerpiece",
+      "pieces": 812,
+      "price": 149.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10320",
+      "itemName": "Eldorado Fortress",
+      "pieces": 2509,
+      "price": 214.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10317",
+      "itemName": "Land Rover Classic Defender 90",
+      "pieces": 2336,
+      "price": 239.99,
+      "hardToFind": true,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10316",
+      "itemName": "THE LORD OF THE RINGS: RIVENDELL™",
+      "pieces": 6167,
+      "price": 499.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10323",
+      "itemName": "PAC-MAN Arcade",
+      "pieces": 2651,
+      "price": 269.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10281",
+      "itemName": "Bonsai Tree",
+      "pieces": 878,
+      "price": 49.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10305",
+      "itemName": "Lion Knights' Castle",
+      "pieces": 4514,
+      "price": 399.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10312",
+      "itemName": "Jazz Club",
+      "pieces": 2899,
+      "price": 229.99,
+      "hardToFind": true,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10298",
+      "itemName": "Vespa 125",
+      "pieces": 1107,
+      "price": 99.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10303",
+      "itemName": "Loop Coaster",
+      "pieces": 3756,
+      "price": 399.99,
+      "hardToFind": true,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10304",
+      "itemName": "Chevrolet Camro Z28",
+      "pieces": 1456,
+      "price": 169.99,
+      "hardToFind": true,
+      "availabilityId": "1",
+      "availability": "Available now"
+    },
+    {
+      "itemNumber": "10307",
+      "itemName": "Eiffel tower",
+      "pieces": 10001,
+      "price": 629.99,
+      "hardToFind": false,
+      "availabilityId": "1",
+      "availability": "Available now"
+    }
+  ]
+}
