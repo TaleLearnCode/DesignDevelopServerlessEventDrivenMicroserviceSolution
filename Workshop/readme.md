@@ -80,4 +80,5 @@ In the process of building the backend, you will create the following microservi
 - **Order Management:** Handles order placement and processing.
 - **Inventory Management:** Manages product inventory levels.
 - **Shipping Management:** Handles order shipping and tracking.
-- **Email Management:** Sends order confirmations and status updates to customers.
+- **Notification Management:** Sends order confirmations and status updates to customers.
+- **Website Management:** Maintains the static website providing page updates when necessary.
