@@ -5,6 +5,7 @@ The product database is hosted on Cosmos DB. During this step of the workshop, w
 - 03A - [Create the Products database](#create-the-products-database-03a)
 - 03B - [Create the database containers](#create-the-database-containers-03b)
 - 03C - [Create Cosmos DB Change Feed Triggers](#create-cosmos-db-change-feed-triggers-03c)
+- 03D - 
 
 At the completion of the tasks, you should commit the changes to your GitHub repository.
 

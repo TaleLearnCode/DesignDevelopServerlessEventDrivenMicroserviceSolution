@@ -11,6 +11,9 @@ Now we will initialize the databases for use within the workshop.
 - 02G - [Initialize the Inventory Database Schema and Data](#create-the-inventory-database-schema-02f)
 - 02H - [Initialize the Notice Database Schema and Data](#create-the-notice-database-schema-02h)
 - 02I - [Initialize the Purchase Database Schema and Data](#create-the-purchase-database-schema-02i)
+- 02J - [Add database secrets to Key Vault](#add-database-secrets-to-key-vault-02j)
+- 02K - [Add Key Vault reference to the App Config settings](#add-key-vault-reference-to-app-config-settings-02k)
+- 02L - [Add Azure SQL settings to App Config settings](#add-azure-sql-settings-to-app-config-settings-02L)
 
 ## Create the Core Database (02A)
 1. Navigate to the [Azure Portal](https://portal.azure.com)
@@ -148,3 +151,80 @@ Now we will initialize the databases for use within the workshop.
 1. Set **Trust Server Certificate** to **True**
 1. Click the **OK** button
 1. CLick the **Publish** button
+
+## Add database secrets to Key Vault (02J)
+1. Navigate to the [Azure Portal](https://portal.azure.com)
+1. Open the previously created Key Vault account
+1. Click the **Secrets** option on the left-hand menu
+1. CLick the **+ Generate/Import** button
+1. Enter the following information:
+
+| Field | Value |
+|-------|-------|
+| Name | AzureSQLUserId |
+| Secret value | Identifier of the Azure SQL user you created in step 2A |
+
+6. Click the **Create** button
+1. CLick the **+ Generate/Import** button
+1. Enter the following information:
+
+| Field | Value |
+|-------|-------|
+| Name | AzureSqlPassword |
+| Secret value | Password for the Azure SQL user you created in step 2A |
+
+9. Click the **Create** button
+
+## Add Key Vault reference to the App Config settings (02K)
+1. Navigate to the GitHub repository you created for the workshop
+1. Edit the **OrderProcessingSystem/config/secretreferences.json** file
+1. Add the AzureSql:UserId and AzureSql:Password elements
+
+~~~
+  "AzureSql":{
+    "UserId": "{\"uri\":\"https://{KEY_VAULT_ENDPOINT}/secrets/AzureSqlUserId\"}",
+    "Password": "{\"uri\":\"https://{KEY_VAULT_ENDPOINT}/secrets/AzureSqlPassword\"}"
+  }
+~~~
+
+4. Click the **Commit changes...** button
+
+## Add Azure SQL settings to App Config settings (02L)
+1. Edit the **OrderProcessingSystem/config/appsettings.json** file
+1. Add the AzureSql:DataSource, Core:AzureSql:Catalog, Inventory:AzureSql:Catalog, Notice:AzureSql:Catalog, Purchase:AzureSql:Catalog, and Shipping:AzureSql:Catalog elements
+
+~~~
+"AzureSql": {
+  "DataSource": "sql-ops-walkthrough.database.windows.net"
+},
+"Core": {
+  "AzureSql": {
+    "Catalog": "sqldb-core-walkthrough-use"
+  }
+},
+"Inventory": {
+  "AzureSql": {
+    "Catalog": "sqldb-inventory-walkthrough-use"
+  }
+},
+"Notice": {
+  "AzureSql": {
+    "Catalog": "sqldb-notice-walkthrough-use"
+  }
+},
+"Purchase": {
+  "AzureSql": {
+    "Catalog": "sqldb-purchase-walkthrough-use"
+  }
+},
+"Shipping": {
+  "AzureSql": {
+    "Catalog": "sqldb-shipping-walkthrough-use"
+  }
+}
+~~~
+
+3. Click the **Commit changes...** button
+1. Click on the **Actions** tab and validate that the **AppConfig** workflow completed successfully twice
+
+![Screenshot of GitHubs Actions being completed](images/02-InitializeDatabases/02L-ActionsCompleted.png)
