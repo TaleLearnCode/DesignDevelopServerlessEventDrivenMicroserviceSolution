@@ -5,12 +5,15 @@ After receiving a notification from the Purchase system that a purchase has been
 
 ## Tasks
 - 05A - [Add a shared access policy for Notice to access the Place Order Event Hub](#add-a-shared-access-policy-for-notice-to-access-the-place-order-event-hub-05a)
-- 05B - [Create the Email Communications Service resource](#create-teh-email-communications-service-resource-05b)
+- 05B - [Create the Email Communication Service resource](#create-the-email-communication-service-resource-05b)
 - 05C - [Provision email domain](#provision-email-domain-05c)
 - 05D - [Create a Communication Service Resource](#create-a-communication-service-resource-05d)
 - 05E - [Connect the email domain to the Communication Service resource](#connect-the-email-domain-to-the-communication-service-resource-05e)
-- 05F - [Add service logic for user story](#add-service-logic-for-user-story-05f)
-- 05G - [Create an Azure Function to trigger the email confirmation to be sent](#create-an-azure-function-to-trigger-the-email-confirmation-to-be-sent-05g)
+- 05F - [Add Sender Email Address to the App Config](#add-sender-email-address-to-the-app-config-05f)
+- 05G - [Add Communication Service Connection String to Key Vault](#add-communication-service-connection-string-to-key-vault-05g)
+- 05H - [Add service logic for user story](#add-service-logic-for-user-story-05h)
+- 05I - [Create an Azure Function to trigger the email confirmation to be sent](#create-an-azure-function-to-trigger-the-email-confirmation-to-be-sent-05i)
+- 05J - [Test the Send Order Confirmation User Story](test-the-send-order-confirmation-user-story-05j)
 
 ### Add a shared access policy for Notice to access the Place Order Event Hub (05A)
 1. Navigate to the **OrderPlaced** Event Hub
@@ -63,7 +66,7 @@ After a minute or two, the email domain will be created.
 
 ### Create a Communication Service Resource (05D)
 1. Navigate to the [Azure portal](https://portal.azure.com) to create a new resource.
-1. Search for Communication Services and hit enter. Select **Communication Sevrices** and press **Create**.
+1. Search for Communication Services and hit enter. Select **Communication Services** and press **Create**.
 1. Complete the required information
 
 - Select the Azure subscription you have been using for the workshop.
@@ -89,7 +92,57 @@ After a minute or two, the email domain will be created.
 1. Enter the required information and click the **Send** button
 1. Validate the email is received
 
-### Add service logic for user story (05F)
+### Add Sender Email Address to the App Config (05F)
+1. From the **Try Email** screen, copy the *from* email address
+
+![Screenshot of the Try Email screen with the from email address highlighted](images/05-SendOrderConfirmation/acs-try-email.png)
+
+2. Navigate to the GitHub repository you created for the workshop.
+1. Open the **config/appsettings.json** file in edit mode.
+1. Add the Notice:SenderAddress element.
+
+~~~
+"Notice": {
+  "AzureSql": {
+    "Catalog": "{NOTICE_CATALOG_NAME}"
+  },
+  "SenderAddress": "{SENDER_EMAIL_ADDRESS}"
+}
+~~~
+
+5. Click the **Commit changes...** button.
+1. Validate that the AppConfig workflow completed successfully.
+
+### Add Communication Service Connection String to Key Vault (05G)
+1. Click on the **Keys** option under **Settings** on the left-hand navigation panel.
+1. Click the **Copy** button on the **Primary key - Connection string**.
+
+![Screenshot of the ACS Keys page with the copy button highlighted](images/05-SendOrderConfirmation/acs-keys.png)
+
+3. Navigate to the Key Vault you created for the workshop.
+1. Click the **+ Generate/Import** button.
+1. Enter the following information:
+
+| Field        | Value                                                                     |
+|--------------|---------------------------------------------------------------------------|
+| Name         | ACSConnectionString                                                       |
+| Secret Value | The Azure Communication Services connection string you previously copied. |
+
+6. Click the **Create** button.
+1. Navigate to the GitHub repository you create for the project.
+1. Open the config/SecretReferences.json file for edit
+1. Add the AzureCommunicationServices:ConnectionString element
+
+~~~
+"AzureCommunicationServices": {
+  "ConnectionString": "{\"uri\":\"https://{KEY_VAULT_ENDPOINT}/secrets/ACSConnectionString\"}"
+}
+~~~
+
+10. Click the **Commit changes...** button.
+1. Validate that the **AppConfig** workflow completed successfully.
+
+### Add service logic for user story (05H)
 1. Add the **Azure.Communication.Email** NuGet package to the **Notice.Services** project
 1. Right click on the **Notice.Services** and select **Add > Class**
 1. Name the new class **NoticeServices.cs**
@@ -167,7 +220,7 @@ public async Task SendOrderConfirmationAsync(OrderPlacedMessage orderPlacedMessa
 }
 ~~~
 
-### Create an Azure Function to trigger the email confirmation to be sent (5G)
+### Create an Azure Function to trigger the email confirmation to be sent (5I)
 1. For Visual Studio, right-click on the **Purchase** solution folder and select the **Add > New Project** option.
 1. Select the **Azure Functions* project template
 1. From the **Configure your new project** dialog, enter the following values:
@@ -281,7 +334,7 @@ public class PlaceOrderMonitor
 
 ![Screenshot of the Configure Startup Projects dialog](images/05-SendOrderConfirmation/configure-startup-projects.png)
 
-### Test the Send Order Confirmation User Story (5H)
+### Test the Send Order Confirmation User Story (5J)
 1. Open Postman and create a new request
 1. Change the HTTP verb to **Post**
 1. Paste the **PlaceOrder** endpoint URL
