@@ -179,7 +179,7 @@ public async Task ReserveItemForOrderAsync(ProductPurchasedMessage productPurcha
 ~~~
 
 ### Create an Azure Function to trigger the inventory to be reserved (6C)
-1. For Visual Studio, right-click on the **Inventory** solution folder and select the **Add > New Project** option.
+1. From Visual Studio, right-click on the **Inventory** solution folder and select the **Add > New Project** option.
 1. Select the **Azure Functions* project template
 1. From the **Configure your new project** dialog, enter the following values:
 
