@@ -1,4 +1,4 @@
-# 04 - Place Order
+# 04 - Place Order (Purchase)
 
 ## User Story
 When a customer places an order, the **Purchase** system receives the order and performs the following steps:
@@ -12,9 +12,10 @@ When a customer places an order, the **Purchase** system receives the order and 
 - 04C - [Add a shared access policy for Purchase to access the Place Order Service Bus queue](#add-a-shared-access-policy-for-purchase-to-access-the-place-order-service-bus-queue-04c)
 - 04D - [Create the Event Hubs namespace](#create-the-event-hubs-namespace-04d)
 - 04E - [Create the Place Order Event Hub](#create-the-place-order-event-hub-04e)
-- 04F - [Add service logic for user story](#add-service-logic-for-user-story-04f)
-- 04G - [Create restful endpoint to initiate the Place Order user story](#create-restful-endpoint-to-initiate-place-order-user-story-04g)
-- 04H - [Test the Place Order User Story](#test-the-place-order-user-story-4H)
+- 04F - [Add a shared access policy for Purchase to access the Place Order Event Hub](#add-a-shared-access-policy-for-purchase-to-access-the-place-order-event-hub-04f)
+- 04G - [Add service logic for user story](#add-service-logic-for-user-story-04g)
+- 04H - [Create restful endpoint to initiate the Place Order user story](#create-restful-endpoint-to-initiate-place-order-user-story-04h)
+- 04I - [Test the Place Order User Story](#test-the-place-order-user-story-4i)
 
 ### Create the Service Bus namespace (04A)
 1. Navigate to the [Azure Portal](https://portal.azure.com/)
@@ -184,10 +185,10 @@ Endpoint=sb://sbns-orderprocessingsystem-walkthrough-use.servicebus.windows.net/
 1. Click the **+ Generate/Import** button
 1. Enter the following information
 
-| Field | Value |
-|-------|-------|
-| Name | EventHub-OrderPlaced-Purchase |
-| Secret value | The copied key, removing the EntityPath | 
+| Field        | Value                         |
+|--------------|-------------------------------|
+| Name         | EventHub-OrderPlaced-Purchase |
+| Secret value | The copied key                | 
 
 5. Click the **Create** button
 
@@ -214,7 +215,7 @@ Endpoint=sb://sbns-orderprocessingsystem-walkthrough-use.servicebus.windows.net/
 4. Click the **Commit changes...** button
 1. Verify that the AppConfig GitHub Action completed successfully
 
-### Add service logic for user story (04F)
+### Add service logic for user story (04G)
 1. From Visual Studio, right click on the **Purchase.Services** and select **Add > Class**
 1. Name the new class **PurchaseServices.cs**
 1. Replace the existing code with the following:
@@ -226,7 +227,6 @@ public class PurchaseServices : ServicesBase
 {
 
 	public PurchaseServices(ConfigServices configServices) : base(configServices) { }
-
 
 }
 ~~~
@@ -343,7 +343,7 @@ public async Task<string> PlaceOrderAsync(PlaceOrderRequest placeOrderRequest)
 }
 ~~~
 
-### Create restful endpoint to initiate the Place Order user story (4G)
+### Create restful endpoint to initiate the Place Order user story (4H)
 1. For Visual Studio, righ-click on the **Purchase** solution folder and select the **Add > New Project** option.
 1. Select the **Azure Functions* project template
 1. From the **Configure your new project** dialog, enter the following values:
@@ -503,7 +503,7 @@ public class PlaceOrder
 
 ![Screenshot of the Configure Startup Projects dialog](images/04-PlaceOrder/04G-ConfigureStartupProjects.png)
 
-### Test the Place Order User Story (4H)
+### Test the Place Order User Story (4I)
 1. Press **F5** to run the solution
 1. Copy the **PlaceOrder** endpoint
 
