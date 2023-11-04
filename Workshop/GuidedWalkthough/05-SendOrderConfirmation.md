@@ -281,11 +281,6 @@ public class PlaceOrderMonitor
 
 ![Screenshot of the Configure Startup Projects dialog](images/05-SendOrderConfirmation/configure-startup-projects.png)
 
-
-
-
-
-
 ### Test the Send Order Confirmation User Story (5H)
 1. Open Postman and create a new request
 1. Change the HTTP verb to **Post**
