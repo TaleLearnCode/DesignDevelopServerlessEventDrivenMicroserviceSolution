@@ -12,7 +12,7 @@ The project has been setup and the initial Azure resources have been configured.
 
 **Tasks**
 - 01A - [Initialize GitHub Repo](#initialize-github-repo-01a)
-- 01B - [Clone GitHubRepo](#clone-github-repo-01b)
+- 01B - [Clone GitHub Repository](#clone-github-repo-01b)
 - 01C - [Create a resource group](#create-a-resource-group-01c)
 - 01D - [Create an Azure Key Vault vault](#create-an-azure-key-vault-vault-01d)
 - 01E - [Create an App Configuration store](#create-an-app-configuration-store-01e)
@@ -25,7 +25,7 @@ Log into your GitHub account and create a new repository for the workshop
 
 Log into your GitHub account and fork the base Order Processing System repository into your account.
 
-1. Navigate to the [base Order Processing System repository](https://github.com/TaleLearnCode/DesignDevelopServerlessEventDrivenMicroserviceSolution-BaseSolution).
+1. Navigate to the [base Order Processing System repository](https://github.com/TaleLearnCode/OrderProcessingSystem-Base).
 1. Click the **Fork** button in the upper right corner of the page.
 
 ![Screenshot of the base Order Processing System repository with the Fork button highlighted.](images/01-Configuration/01A01-ForkBaseRepo.png)

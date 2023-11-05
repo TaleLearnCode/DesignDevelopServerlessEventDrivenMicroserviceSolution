@@ -1,1 +1,0 @@
-﻿:r .\Populate\Populate_NotificationType.sql
