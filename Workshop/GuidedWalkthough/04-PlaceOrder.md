@@ -162,6 +162,7 @@ Endpoint=sb://sbns-orderprocessingsystem-walkthrough-use.servicebus.windows.net/
 1. Click the **Create** button
 
 ### Add a shared access policy for Purchase to access the Place Order Event Hub (04F)
+1. From the **Event Hubs** listing, click on the event hub you just created.
 1. Click on the **Shared access policies** option from the left-hand menu
 1. Click the **Add** button
 1. In the **Add SAS Policy** blade, enter the following:

@@ -1,16 +1,16 @@
-# 06 - Reserve Inventory (Inventory)
+# 07 - Reserve Inventory (Inventory)
 
 ## User Story
 After receiving a notification from the Purchase system that a purchase has been made, the Inventory system will reserved the purchase products and send a notification of such.
 
 ## Tasks
-- 06A - [Add a shared access policy for Inventory to access the Place Order Service Bus queue](#add-a-shared-access-policy-for-inventory-to-access-the-place-order-service-bus-queue-06A)
-- 06B - [Create the Inventory Reserved Event Hub](#create-the-inventory-reseved-event-hub-06b)
-- 06C - [Add a shared access policy for Inventory to access the Inventory Reserved Event Hub](#add-a-shared-access-policy-for-inventory-to-access-the-inventory-reserved-event-hub)
-- 06D - [Add service logic for user story](#add-service-logic-for-user-story-06d)
-- 06E - [Test the Reserve Inventory User Story](#test-the-reserve-inventory-user-story-06e)
+- 07A - [Add a shared access policy for Inventory to access the Place Order Service Bus queue](#add-a-shared-access-policy-for-inventory-to-access-the-place-order-service-bus-queue-07a)
+- 07B - [Create the Inventory Reserved Event Hub](#create-the-inventory-reseved-event-hub-07b)
+- 07C - [Add a shared access policy for Inventory to access the Inventory Reserved Event Hub](#add-a-shared-access-policy-for-inventory-to-access-the-inventory-reserved-event-hub-07c)
+- 07D - [Add service logic for user story](#add-service-logic-for-user-story-07d)
+- 07E - [Test the Reserve Inventory User Story](#test-the-reserve-inventory-user-story-07e)
 
-### Add a shared access policy for Inventory to access the Place Order Service Bus queue (06A)
+### Add a shared access policy for Inventory to access the Place Order Service Bus queue (07A)
 1. From the [Azure Portal](https://portal.azure.com), click on the Service Bus account created for the workshop
 1. Click **Queues** option on the left-hand menu
 1. Click on the PlaceOrder queue
@@ -27,7 +27,7 @@ After receiving a notification from the Purchase system that a purchase has been
 1. Click on the policy you just created
 1. Copy the **Connection string-primary key**
 
-### Create the Inventory Reserved Event Hub (06B)
+### Create the Inventory Reserved Event Hub (07B)
 1. From the [Azure Portal](https://portal.azure.com), navigate to the Event Hub Namespace you created for this workshop.
 1. Click the **+ Event Hub** button
 1. Enter the following information:
@@ -44,7 +44,7 @@ After receiving a notification from the Purchase system that a purchase has been
 4. Click the **Review + create** button
 1. Click the **Create** button
 
-### Add a shared access policy for Inventory to access the Inventory Reserved Event Hub (06C)
+### Add a shared access policy for Inventory to access the Inventory Reserved Event Hub (07C)
 1. From the **Event Hubs** listing, click on the **Inventory Reserved** event hub you just created.
 1. Click on the **Shared access policies** option under **Settings* from the left-hand menu
 1. Click the **Add** button
@@ -94,7 +94,7 @@ After receiving a notification from the Purchase system that a purchase has been
 4. Click the **Commit changes...** button
 1. Verify that the AppConfig GitHub Action completed successfully
 
-### Add service logic for user story (06D)
+### Add service logic for user story (07D)
 1. Right click on the **Inventory.Services** and select **Add > Class**
 1. Name the new class **InventoryServices.cs**
 1. Replace the existing code with the following:
@@ -178,7 +178,7 @@ public async Task ReserveItemForOrderAsync(ProductPurchasedMessage productPurcha
 }
 ~~~
 
-### Create an Azure Function to trigger the inventory to be reserved (6C)
+### Create an Azure Function to trigger the inventory to be reserved (7C)
 1. From Visual Studio, right-click on the **Inventory** solution folder and select the **Add > New Project** option.
 1. Select the **Azure Functions* project template
 1. From the **Configure your new project** dialog, enter the following values:
@@ -286,7 +286,7 @@ public class OrderPlacedMonitor
 
 ![Screenshot of the Configure Startup Projects dialog](images/06-ReserveInventory/![Screenshot of the Configure Startup Projects dialog](images/06-ReserveInventory/configure-startup-projects.png).png)
 
-### Test the Reserve Inventory User Story (6E)
+### Test the Reserve Inventory User Story (7E)
 1. Open Postman and create a new request
 1. Change the HTTP verb to **Post**
 1. Paste the **PlaceOrder** endpoint URL

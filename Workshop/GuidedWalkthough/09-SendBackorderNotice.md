@@ -1,20 +1,20 @@
-# 07 - Update Purchase Status on Inventory Reserve
+# 09 - Send Backorder Notice
 
 ## User Story
-After receiving a notification from the Inventory system that the inventory has been reserved for an order, the Purchase system will update the status of the purchase line item. If all of the line items for the purchase have been updated, then the purchase status will be updated.
+The Notice system monitors the Inventory Reserved messages looking for backorder notices. Upon receiving a backorder notice, the Notice system will send the customer informing them that the order has been backordered.
 
 ## Tasks
-- 07A - [Add consumer group for Purchase on the Inventory Reserved Event Hub](#add-consumer-group-for-purchase-on-the-invnetory-reserved-event-hub-07a)
-- 07B - [Add service logic for user story](#add-service-logic-for-user-story-07b)
-- 07C - [Create an Azure Function to trigger the purchase update upon inventory being reserved](#create-an-azure-function-to-trigger-the-purchase-update-upon-inventory-being-reserved-07c
-- 07D - [Test the Update Purchase Status on Inventory Reserve User Story](#test-the-update-purchase-status-on-inventory-reserve-user-story-07d)
+- 09A - [Add consumer group for Notice on the Inventory Reserved Event Hub](#add-consumer-group-for-nootice-on-the-inventory-reserved-event-hub-09a)
+- 09B - [Add service logic for user story](#add-service-logic-for-user-story-09b)
+- 09C - [Create an Azure Function to watch for backorder notices](#create-an-azure-function-to-watch-for-backorder-notices-09c)
+- 09D - [Test the Send Backorder Notice User Story](#test-the-send-backorder-notice-user-story-09d)
 
-### Add consumer group for Purchase on the Inventory Reserved Event Hub (07A)
+### Add consumer group for Notice on the Inventory Reserved Event Hub (09A)
 1. From the [Azure Portal](https://azure.portal.com), navigate to the Event Hub namespace created from the workshop.
 1. Click on the **Inventory Reserved** event hub from the **Event Hubs** listing.
 1. Click on the **Consumer groups** option under **Entities** on the left-hand navigation panel
 1. Click the **+ Consumer group** button.
-1. Enter *purchase* in the **Name** field.
+1. Enter *notice* in the **Name** field.
 1. Click the **Create** button.
 
 ### Add a shared access policy for Purchase to access the Inventory Reserved event hub (06A)
@@ -22,7 +22,7 @@ After receiving a notification from the Inventory system that the inventory has 
 1. Click the **+ Add** button
 1. In the **Add SAS Policy** blade, provide the enter the following:
 
-- **Policy name**: Purchase
+- **Policy name**: Notice
 - **Manage**: Unchecked
 - **Send**: Unchecked
 - **Listen**:Checked
@@ -31,43 +31,22 @@ After receiving a notification from the Inventory system that the inventory has 
 1. Click on the policy you just created
 1. Copy the **Connection string-primary key**
 
-### Add service logic for user story (07B)
-1. From Visual Studio, open the **PurchaseServices.cs** file.
-1. Add the **UpdatePurchaseItemStatusAsync** method to the PurchaseServices class.
+### Add service logic for user story (09B)
+1. From Visual Studio, open the **NoticeServices.cs** file.
+1. Add the **SendBackorderNoticeAsync** method to the NoticeServices class.
 
 ~~~
-	public async Task UpdatePurchaseItemStatusAsync(
-		string purchaseId,
-		string productId,
-		int purchaseStatusId)
+	public async Task SendBackorderNoticeAsync(InventoryReservedMessage inventoryReservedMessage)
 	{
-
-		using PurchaseContext purchaseContext = new(_configServices);
-		CustomerPurchase? purchase = await purchaseContext.CustomerPurchases
-			.Include(x => x.PurchaseLineItems)
-			.FirstOrDefaultAsync(x => x.CustomerPurchaseId == purchaseId);
-		if (purchase is not null)
-		{
-
-			PurchaseLineItem? purchaseLineItem = purchase.PurchaseLineItems.FirstOrDefault(x => x.ProductId == productId);
-			if (purchaseLineItem is not null)
-			{
-				purchaseLineItem.PurchaseStatusId = purchaseStatusId;
-				await purchaseContext.SaveChangesAsync();
-			}
-
-			if (purchase.PurchaseLineItems.FirstOrDefault(x => x.PurchaseStatusId != purchaseStatusId) is null && purchase.PurchaseStatusId != purchaseStatusId)
-			{
-				purchase.PurchaseStatusId = purchaseStatusId;
-				await purchaseContext.SaveChangesAsync();
-			}
-		}
-
+		string subject = $"Backorder Notice - {inventoryReservedMessage.OrderId}";
+		string htmlContent = $"<html><body><p>Thank you for your order. Unfortunately, the {inventoryReservedMessage.ProductId} - {inventoryReservedMessage.ProductName} is on backorder and will be shipped as soon as it is back in stock.</p></body></html>";
+		string plainTextContent = $"Thank you for your order. Your order number is {inventoryReservedMessage.OrderId}. Your order is on backorder.";
+		await SendEmailAsync(inventoryReservedMessage.CustomerId, NoticeTypes.BackorderNotice, subject, htmlContent, plainTextContent);
 	}
 ~~~
 
-### Create an Azure Function to trigger the purchase update upon inventory being reserved (7C)
-1. From Visual Studio, right-click on the **Functions** folder within the **Purchase.Functions** folder and click the **Add > New Azure Function**
+### Create an Azure Function to watch for backorder notices (9C)
+1. From Visual Studio, right-click on the **Functions** folder within the **Notice.Functions** folder and click the **Add > New Azure Function**
 1. Enter **InventoryReservedMonitor.cs** for the name of the new Azure Function class.
 
 ![Screenshot of the Add New Function dialog](images/07-UpdatePurchaseStatusOnInventoryReserve/add-new-item.png)
@@ -86,37 +65,37 @@ After receiving a notification from the Inventory system that the inventory has 
 ~~~
 using Azure.Messaging.EventHubs;
 using BuildingBricks.EventMessages;
-using BuildingBricks.Purchase.Constants;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
 
-namespace BuildingBricks.Purchase.Functions;
+namespace BuildingBricks.Notice.Functions;
 
 public class InventoryReservedMonitor
 {
 
 	private readonly ILogger<InventoryReservedMonitor> _logger;
-	private readonly PurchaseServices _purchaseServices;
+	private readonly NoticeServices _noticeServices;
 
 	public InventoryReservedMonitor(
 		ILogger<InventoryReservedMonitor> logger,
-		PurchaseServices purchaseServices)
+		NoticeServices noticeServices)
 	{
 		_logger = logger;
-		_purchaseServices = purchaseServices;
+		_noticeServices = noticeServices;
 	}
 
-	[Function(nameof(InventoryReservedMonitor))]
+	[Function("Notice-InventoryReservedMonitor")]
 	public async Task RunAsync([EventHubTrigger("%InventoryReservedEventHub%", Connection = "InventoryReservedConnectionString", ConsumerGroup = "%InventoryReservedConsumerGroup%")] EventData[] eventMessages)
 	{
 		foreach (EventData eventMessage in eventMessages)
 		{
+			_logger.LogInformation("Inventory Reserved Event Received");
 			InventoryReservedMessage? inventoryReservedMessage = JsonSerializer.Deserialize<InventoryReservedMessage>(eventMessage.EventBody);
-			if (inventoryReservedMessage is not null)
+			if (inventoryReservedMessage is not null && inventoryReservedMessage.Backordered)
 			{
-				_logger.LogInformation("Inventory Reserved Event Received");
-				await _purchaseServices.UpdatePurchaseItemStatusAsync(inventoryReservedMessage.OrderId, inventoryReservedMessage.ProductId, PurchaseStatuses.Reserved);
+				_logger.LogWarning("Inventory Reserved Event Received for Backordered Purchase {PurchaseId}", inventoryReservedMessage.ProductId);
+				await _noticeServices.SendBackorderNoticeAsync(inventoryReservedMessage);
 			}
 		}
 	}
@@ -134,6 +113,8 @@ public class InventoryReservedMonitor
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
     "AppConfigEndpoint": "{APP_CONFIG_ENDPOINT}",
+    "PlaceOrderConnectionString": "{PLACE_ORDER_EVENT_HUB_CONNECTION_STRING}",
+    "PlaceOrderEventHub": "{PLACE_ORDER_EVENT_HUB_NAME}"
     "InventoryReservedConnectionString": "{INVENTORY_RESERVED_EVENT_HUB_CONNECTION_STRING}",
     "InventoryReservedEventHub": "{INVENTORY_RESERVED_EVENT_HUB_NAME}",
     "InventoryReservedConsumerGroup": "purchase"
@@ -141,7 +122,7 @@ public class InventoryReservedMonitor
 }
 ~~~
 
-### Test the Update Purchase Status on Inventory Reserve User Story (07D)
+### Test the Send Backorder Notice User Story (09D)
 1. Open Postman and create a new request
 1. Change the HTTP verb to **Post**
 1. Paste the **PlaceOrder** endpoint URL
@@ -155,7 +136,7 @@ public class InventoryReservedMonitor
   "items":
   [
     {
-      "productId": "10255",
+      "productId": "10295",
       "quantity": 1
     }
   ]

@@ -1,4 +1,4 @@
-# 10 - Product Availability Update
+# 11 - Product Availability Update
 
 ## User Story
 When the Product service receives an Inventory Updated event message, the affected product availability will be updated.  The updated product availability will be based upon the following:
@@ -10,14 +10,14 @@ When the Product service receives an Inventory Updated event message, the affect
 | Less than -10                 | Temporary Out of Stock |
 
 ## Tasks
-- 10A - [Add consumer group for Product on the Inventory Updated Event Hub](#add-consumer-group-for-product-on-the-invnetory-updated-event-hub-09a)
-- 10B - [Add a shared access policy for Purchase to access the Inventory Reserved event hub](#add-a-shared-access-policy-for-purchase-to-access-th-inventory-reserved-event-hub-10b)
-- 10C - [Create an Azure Function to watch for inventory updated notices](#create-an-azure-function-to-watch-for-inventory-updated-notices-10c)
-- 10D - [Test the Product Availability Update User Story](#test-the-product-availability-update-user-story)
+- 11A - [Add consumer group for Product on the Inventory Updated Event Hub](#add-consumer-group-for-product-on-the-invnetory-updated-event-hub-11a)
+- 11B - [Add a shared access policy for Purchase to access the Inventory Reserved event hub](#add-a-shared-access-policy-for-purchase-to-access-th-inventory-reserved-event-hub-11b)
+- 11C - [Create an Azure Function to watch for inventory updated notices](#create-an-azure-function-to-watch-for-inventory-updated-notices-11c)
+- 11D - [Test the Product Availability Update User Story](#test-the-product-availability-update-user-story-11d)
 
 
 
-### Add consumer group for Product on the Inventory Updated Event Hub (10A)
+### Add consumer group for Product on the Inventory Updated Event Hub (11A)
 1. From the [Azure Portal](https://azure.portal.com), navigate to the Event Hub namespace created from the workshop.
 1. Click on the **Inventory Updated** event hub from the **Event Hubs** listing.
 1. Click on the **Consumer groups** option under **Entities** on the left-hand navigation panel
@@ -25,7 +25,7 @@ When the Product service receives an Inventory Updated event message, the affect
 1. Enter *product* in the **Name** field.
 1. Click the **Create** button.
 
-### Add a shared access policy for Purchase to access the Inventory Reserved event hub (10B)
+### Add a shared access policy for Purchase to access the Inventory Reserved event hub (11B)
 1. Click on the **Shared access policies** option under **Settings** on the left-hand navigation panel.
 1. Click the **+ Add** button
 1. In the **Add SAS Policy** blade, provide the enter the following:
@@ -39,7 +39,7 @@ When the Product service receives an Inventory Updated event message, the affect
 1. Click on the policy you just created
 1. Copy the **Connection string-primary key**
 
-### Create an Azure Function to watch for inventory updated notices (10C)
+### Create an Azure Function to watch for inventory updated notices (11C)
 1. From Visual Studio, right-click on the **Functions** folder within the **Notice.Functions** folder and click the **Add > New Azure Function**
 1. Enter **InventoryUpdatedMonitor.cs** for the name of the new Azure Function class.
 
@@ -179,7 +179,7 @@ public class InventoryUpdatedMonitor
 }
 ~~~
 
-### Test the Product Availability Update User Story (10D)
+### Test the Product Availability Update User Story (11D)
 1. Open Postman and create a new request
 1. Change the HTTP verb to **Post**
 1. Paste the **PlaceOrder** endpoint URL

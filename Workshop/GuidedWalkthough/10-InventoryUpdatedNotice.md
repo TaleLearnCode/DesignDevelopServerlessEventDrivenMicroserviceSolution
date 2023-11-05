@@ -1,20 +1,20 @@
-# 09 - Inventory Updated Notice
+# 10 - Inventory Updated Notice
 
 ## User Story
 When there is an update to the the inventory of a product, the Inventory system will send out an event message with details of the updated inventory so that subscribed systems can performed needed actions.
 
 ## Tasks
-- 09A - [Turn on change tracking on the Inventory database](#turn-on-change-tracking-on-the-inventory-database-09a)
-- 09B - [Create Inventory Updated Event Hub](#create-inventory-updated-event-hub-09b)
-- 09C - [Add a shared access policy for Inventory to access the Inventory Updated event hub](#add-a-shared-access-policy-for-inventory-to-access-the-inventory-updated-event-hub-09c)
-- 09D - [Add service logic for user story](#add-service-logic-for-user-story-09d)
-- 09E - [Create an Azure Function to watch for changes to the Inventory.InventoryTransaction table](#create-an-azure-function-to-watch-for-changes-to-the-inventory.inventorytransaction-table-09e)
-- 09F - [Test the Inventory Updated Notice User Story](#test-the-inventory-updated-notice-user-story-09f)
+- 10A - [Turn on change tracking on the Inventory database](#turn-on-change-tracking-on-the-inventory-database-10a)
+- 10B - [Create Inventory Updated Event Hub](#create-inventory-updated-event-hub-10b)
+- 10C - [Add a shared access policy for Inventory to access the Inventory Updated event hub](#add-a-shared-access-policy-for-inventory-to-access-the-inventory-updated-event-hub-10c)
+- 10D - [Add service logic for user story](#add-service-logic-for-user-story-10d)
+- 10E - [Create an Azure Function to watch for changes to the Inventory.InventoryTransaction table](#create-an-azure-function-to-watch-for-changes-to-the-inventory.inventorytransaction-table-10e)
+- 10F - [Test the Inventory Updated Notice User Story](#test-the-inventory-updated-notice-user-story-10f)
 
-### Turn on change tracking on the Inventory database (09A)
+### Turn on change tracking on the Inventory database (10A)
 1. Execute the **EnableChangeTracking.sql** file from the **Inventory.Database** project on the **Inventory** database.
 
-### Create Inventory Updated Event Hub (09B)
+### Create Inventory Updated Event Hub (10B)
 1. From the [Azure Portal](https://portal.azure.com), navigate to the Event Hub namespace you created for the workshop.
 1. Click the **+ Event Hub** button.
 1. Enter the following information:
@@ -31,7 +31,7 @@ When there is an update to the the inventory of a product, the Inventory system 
 4. Click the **Review + create** button
 1. Click the **Create** button
 
-### Add a shared access policy for Inventory to access the Inventory Updated event hub (09C)
+### Add a shared access policy for Inventory to access the Inventory Updated event hub (10C)
 1. From the **Event Hubs** listing, click on the event hub you just created
 1. Click on the **Shared access policies** option under **Settings** from the left-hand navigation pane
 1. Click the **Add** button
@@ -84,7 +84,7 @@ When there is an update to the the inventory of a product, the Inventory system 
 4. Click the **Commit changes...** button
 1. Verify that the AppConfig GitHub Action completed successfully
 
-### Add service logic for user story (09D)
+### Add service logic for user story (10D)
 1. From Visual Studio, open the **InventoryServices.cs** file.
 1. Add the **GetInventoryStatusAsync** method to the InventoryServices class.
 
@@ -110,7 +110,7 @@ public async Task InventoryUpdatedAsync(string productId)
 }
 ~~~
 
-### Create an Azure Function to watch for changes to the Inventory.InventoryTransaction table (9E)
+### Create an Azure Function to watch for changes to the Inventory.InventoryTransaction table (10E)
 1. From Visual Studio, right-click on the **Functions** folder within the **Inventory.Functions** folder and click the **Add > New Azure Function**
 1. Enter **InventoryUpdated.cs** for the name of the new Azure Function class.
 
@@ -180,7 +180,7 @@ public class InventoryUpdated
 }
 ~~~
 
-### Test the Inventory Updated Notice User Story (09F)
+### Test the Inventory Updated Notice User Story (10F)
 1. Open Postman and create a new request
 1. Change the HTTP verb to **Post**
 1. Paste the **PlaceOrder** endpoint URL

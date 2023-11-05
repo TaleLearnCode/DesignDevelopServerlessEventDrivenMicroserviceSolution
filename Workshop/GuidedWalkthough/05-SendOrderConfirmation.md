@@ -4,18 +4,27 @@
 After receiving a notification from the Purchase system that a purchase has been made, the Notice system will send the customer an email confirming the order. The email confirmation shall be logged for compliance reasons.
 
 ## Tasks
-- 05A - [Add a shared access policy for Notice to access the Place Order Event Hub](#add-a-shared-access-policy-for-notice-to-access-the-place-order-event-hub-05a)
-- 05B - [Create the Email Communication Service resource](#create-the-email-communication-service-resource-05b)
-- 05C - [Provision email domain](#provision-email-domain-05c)
-- 05D - [Create a Communication Service Resource](#create-a-communication-service-resource-05d)
-- 05E - [Connect the email domain to the Communication Service resource](#connect-the-email-domain-to-the-communication-service-resource-05e)
-- 05F - [Add Sender Email Address to the App Config](#add-sender-email-address-to-the-app-config-05f)
-- 05G - [Add Communication Service Connection String to Key Vault](#add-communication-service-connection-string-to-key-vault-05g)
-- 05H - [Add service logic for user story](#add-service-logic-for-user-story-05h)
-- 05I - [Create an Azure Function to trigger the email confirmation to be sent](#create-an-azure-function-to-trigger-the-email-confirmation-to-be-sent-05i)
-- 05J - [Test the Send Order Confirmation User Story](test-the-send-order-confirmation-user-story-05j)
+- 05A - [Create a consumer group for Notice on the Place Order event hub](#create-a-consumer-group-for-notice-on-the-place-order-event-hub-05a)
+- 05B - [Add a shared access policy for Notice to access the Place Order event hub](#add-a-shared-access-policy-for-notice-to-access-the-place-order-event-hub-05a)
+- 05C - [Create the Email Communication Service resource](#create-the-email-communication-service-resource-05b)
+- 05D - [Provision email domain](#provision-email-domain-05c)
+- 05E - [Create a Communication Service Resource](#create-a-communication-service-resource-05d)
+- 05F - [Connect the email domain to the Communication Service resource](#connect-the-email-domain-to-the-communication-service-resource-05e)
+- 05G - [Add Sender Email Address to the App Config](#add-sender-email-address-to-the-app-config-05f)
+- 05H - [Add Communication Service Connection String to Key Vault](#add-communication-service-connection-string-to-key-vault-05g)
+- 05I - [Add service logic for user story](#add-service-logic-for-user-story-05h)
+- 05J - [Create an Azure Function to trigger the email confirmation to be sent](#create-an-azure-function-to-trigger-the-email-confirmation-to-be-sent-05i)
+- 05K - [Test the Send Order Confirmation User Story](test-the-send-order-confirmation-user-story-05j)
 
-### Add a shared access policy for Notice to access the Place Order Event Hub (05A)
+### Create a consumer group for Notice on the Place Order event hub (05A)
+1. From the [Azure Portal](https://portal.azure.com), navigate to the Event Hub namespace you created for the workshop.
+1. From the **Event Hubs** listing, click on the **Order Placed** event hub.
+1. Click on the **Consumer groups** option under **Entities** from the left-hand navigation pane.
+1. Click on the **+ Consumer group** button.
+1. Enter 'notice' in the **Name** field and click the **Create** button.
+1. 
+
+### Add a shared access policy for Notice to access the Place Order event hub (05B)
 1. Navigate to the **OrderPlaced** Event Hub
 1. Click on the **Shared access policies** option from the left-hand menu
 1. Click the **Add** button
@@ -34,7 +43,7 @@ After receiving a notification from the Purchase system that a purchase has been
 1. Click on the policy you just created
 1. Copy the **Connection string-primary key**
 
-### Create the Email Communication Service resource (05B)
+### Create the Email Communication Service resource (05C)
 1. Navigate to the [Azure portal](https://portal.azure.com) to create a new resource.
 1. Search for Email Communications Service and hit enter. Select **Email Communication Services** and press **Create**.
 
@@ -54,7 +63,7 @@ After receiving a notification from the Purchase system that a purchase has been
 5. Wait for the validation to pass. Click **Create**.
 1. Wait for the Deployment to complete. Click **Go to Resource** to navigate to the Communication Service Overview Page.
 
-### Provision email domain (5C)
+### Provision email domain (5D)
 1. From the *Email Communication Service* page, click on the **Provision domains** option from the left-hand menu
 1. Click on the **1-click add** button
 
@@ -64,7 +73,7 @@ After a minute or two, the email domain will be created.
 
 ![Screenshot of the email domain being provisioned](images/05-SendOrderConfirmation/domain-provisioned.png)
 
-### Create a Communication Service Resource (05D)
+### Create a Communication Service Resource (05E)
 1. Navigate to the [Azure portal](https://portal.azure.com) to create a new resource.
 1. Search for Communication Services and hit enter. Select **Communication Services** and press **Create**.
 1. Complete the required information
@@ -80,7 +89,7 @@ After a minute or two, the email domain will be created.
 5. Wait for the validation to pass. Click **Create**.
 1. Wait for the Deployment to complete. Click **Go to resource** to navigate to the Communication Service page.
 
-## Connect the email domain to the Communication Service resource (05E)
+### Connect the email domain to the Communication Service resource (05F)
 1. In the Azure Communication Service Resource overview page, click the **Domains** on the left navigation panel under Email
 2. Click the **Connect domain** button
 3. Select the email domain create above
@@ -92,7 +101,7 @@ After a minute or two, the email domain will be created.
 1. Enter the required information and click the **Send** button
 1. Validate the email is received
 
-### Add Sender Email Address to the App Config (05F)
+### Add Sender Email Address to the App Config (05G)
 1. From the **Try Email** screen, copy the *from* email address
 
 ![Screenshot of the Try Email screen with the from email address highlighted](images/05-SendOrderConfirmation/acs-try-email.png)
@@ -113,7 +122,7 @@ After a minute or two, the email domain will be created.
 5. Click the **Commit changes...** button.
 1. Validate that the AppConfig workflow completed successfully.
 
-### Add Communication Service Connection String to Key Vault (05G)
+### Add Communication Service Connection String to Key Vault (05H)
 1. Click on the **Keys** option under **Settings** on the left-hand navigation panel.
 1. Click the **Copy** button on the **Primary key - Connection string**.
 
@@ -142,7 +151,7 @@ After a minute or two, the email domain will be created.
 10. Click the **Commit changes...** button.
 1. Validate that the **AppConfig** workflow completed successfully.
 
-### Add service logic for user story (05H)
+### Add service logic for user story (05I)
 1. Add the **Azure.Communication.Email** NuGet package to the **Notice.Services** project
 1. Right click on the **Notice.Services** and select **Add > Class**
 1. Name the new class **NoticeServices.cs**
@@ -220,7 +229,7 @@ public async Task SendOrderConfirmationAsync(OrderPlacedMessage orderPlacedMessa
 }
 ~~~
 
-### Create an Azure Function to trigger the email confirmation to be sent (5I)
+### Create an Azure Function to trigger the email confirmation to be sent (5J)
 1. For Visual Studio, right-click on the **Purchase** solution folder and select the **Add > New Project** option.
 1. Select the **Azure Functions* project template
 1. From the **Configure your new project** dialog, enter the following values:
@@ -279,7 +288,8 @@ host.Run();
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
     "AppConfigEndpoint": "{APP_CONFIG_ENDPOINT}",
     "PlaceOrderConnectionString": "{EVENT_HUB_CONNECTION_STRING}",
-    "PlaceOrderEventHub": "{EVENT_HUB_NAME}"
+    "PlaceOrderEventHub": "{EVENT_HUB_NAME}",
+		"PlaceOrderConsumerGroup": "notice,
   }
 }
 ~~~
@@ -313,7 +323,7 @@ public class PlaceOrderMonitor
 	}
 
 	[Function("Notice-PlaceOrderMonitor")]
-	public async Task RunAsync([EventHubTrigger("%PlaceOrderEventHub%", Connection = "PlaceOrderConnectionString")] EventData[] eventMessages)
+	public async Task RunAsync([EventHubTrigger("%PlaceOrderEventHub%", Connection = "PlaceOrderConnectionString", ConsumerGroup = "%PlaceOrderConsumerGroup%")] EventData[] eventMessages)
 	{
 		foreach (EventData eventMessage in eventMessages)
 		{
@@ -334,7 +344,7 @@ public class PlaceOrderMonitor
 
 ![Screenshot of the Configure Startup Projects dialog](images/05-SendOrderConfirmation/configure-startup-projects.png)
 
-### Test the Send Order Confirmation User Story (5J)
+### Test the Send Order Confirmation User Story (5K)
 1. Open Postman and create a new request
 1. Change the HTTP verb to **Post**
 1. Paste the **PlaceOrder** endpoint URL
