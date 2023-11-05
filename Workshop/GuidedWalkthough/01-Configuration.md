@@ -1,15 +1,58 @@
-# 01 - Configuration and Project Setup
-First we will setup the configuration services so our applications can get secrets and settings without having to put compromising information in your source code repositories.
+# 01 - Project Setup and Configuration
+
+## User Story
+As the architect, I want to setup the project and configure the initial Azure resources so that the development team can begin developing the solution.
+
+### Definition of Done
+The project has been setup and the initial Azure resources have been configured.
+
+---
+
+## Workshop Exercises
 
 **Tasks**
-- 01A - [Create a resource group](#create-a-resource-group-01a)
-- 01B - [Create an Azure Key Vault vault](#create-an-azure-key-vault-vault-01b)
-- 01C - [Create an App Configuration store](#create-an-app-configuration-store-01c)
-- 01D - [Create Cosmos DB account](#create-cosmos-db-account-01d)
-- 01E - [Add Cosmos DB Primary Key to Key Vault](#add-cosmos-db-primary-key-to-key-vault-01e)
-- 01F - [Initialize the GitHub Repo for the Workshop](#initialize-the-github-repo-for-the-workshop-O1f)
+- 01A - [Initialize GitHub Repo](#initialize-github-repo-01a)
+- 01B - [Clone GitHub Repository](#clone-github-repo-01b)
+- 01C - [Create a resource group](#create-a-resource-group-01c)
+- 01D - [Create an Azure Key Vault vault](#create-an-azure-key-vault-vault-01d)
+- 01E - [Create an App Configuration store](#create-an-app-configuration-store-01e)
+- 01F - [Create Cosmos DB account](#create-cosmos-db-account-01f)
+- 01G - [Add Cosmos DB Primary Key to Key Vault](#add-cosmos-db-primary-key-to-key-vault-01g)
+- 01H - [Initialize the GitHub Repo for the Workshop](#initialize-the-github-repo-for-the-workshop-O1h)
 
-## Create a resource group (01A)
+### Initialize GitHub Repo (01A)
+Log into your GitHub account and create a new repository for the workshop
+
+Log into your GitHub account and fork the base Order Processing System repository into your account.
+
+1. Navigate to the [base Order Processing System repository](https://github.com/TaleLearnCode/OrderProcessingSystem-Base).
+1. Click the **Fork** button in the upper right corner of the page.
+
+![Screenshot of the base Order Processing System repository with the Fork button highlighted.](images/01-Configuration/01A01-ForkBaseRepo.png)
+
+1. Select your GitHub account as the location to fork the repository and specify the name of the new repository
+
+![Screenshot of the Create a new fork GitHub page.](images/01-Configuration/01A02-CreateAFork.png)
+
+1. Once the fork is complete, you will be taken to your forked repository.
+1. Click the **Settings** tab.
+1. CLick the **Branches** menu item.
+1. Click the **Add branch protection rule** button.
+1. Enter **main** for the **Branch name pattern**.
+1. Check the **Require a pull request before merging** checkbox.
+1. Ensure the **Require approvals** checkbox is checked.
+1. Create the **Create** button.
+
+### Clone GitHub Repo (01B)
+1. Click the **Code** tab.
+1. CLick the **Code** button.
+1. Click the copy button in order to copy the HTTPS URL to the clipboard.
+1. Open Visual Studio
+1. From the **Start** page, select **Clone a repository**.
+1. Past the URL copied in step 3 into the **Repository location** field.
+1. Click the **Clone** button.
+
+### Create a resource group (01C)
 A resource group is a container that holds related resources for an Azure solution.  The resource group can include all the resources for the solution, or only those resources that you want to manage as a group.  You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization.  Generally, add resources that share the same lifecycle to the same resource group so you can easily deploy, update, and delete them as a group.
 
 The resource group stores metadata about the resources.  Therefore, when you specify a location for the resource group, you are specifying where that metadata is stored.  For compliance reasons, you may need to ensure that your data is store in a particular reason.
@@ -51,7 +94,7 @@ For this workshop, everything you create will be done so in the same resource gr
 
 ![Screenshot of Resource group created notification.](images/01-Configuration/01A07-Notification.png)
 
-## Create an Azure Key Vault vault (01B)
+### Create an Azure Key Vault vault (01D)
 Centralized storage of application secrets in Azure Key Vault allows you to control their distribution.  Key Vault greatly reduces the changes that secrets may be accidently leaked.  When application developers use Key Vault, they no longer need to store security information in their application.  Not having to store security information in applications eliminates the need to make this information part of the code.  For example, an application may need to connect to a databae.  Instead of storing the connection string in the application's code, you can store it securely in Key Vault.
 
 1. From the resource group resource listing page, click the **+ Create** button
@@ -80,7 +123,7 @@ Centralized storage of application secrets in Azure Key Vault allows you to cont
 
 ![Screenshot of the Review + create screen.](images/01-Configuration/01B04-ReviewAndCreate.png)
 
-## Create an App Configuration store (01C)
+### Create an App Configuration store (01E)
 
 Azure App Configuration is an Azure service designed to help you centrally manage your app settings and feature flags.  In this step, you will create an App Configuration store to be used for the workshop.
 
@@ -106,8 +149,20 @@ Azure App Configuration is an Azure service designed to help you centrally manag
 
 4. Click the **Review + create** button.
 5. Click the **Create** button.  The deployment might take a few minutes.
+1. Click the **Go to resource** button.
+1. Click the **Access control (IAM)** menu option.
+1. Click the **+ Add role assignment** button.
+1. Select the **App Configuration Data Reader** role.
+1. Click the **Next** button.
+1. CLick the **+ Select members** link.
+1. Select your account.
+1. Click the **Select** button.
 
-## Create Cosmos DB account (01D)
+![Screenshot of the Add role assignment page.](images/01-Configuration/01F06-SelectMembers.png)
+
+14. Click the **Review + assign** button.
+
+### Create Cosmos DB account (01F)
 Azure Cosmos DB is Microsoft's globally distributed multi-model database service.  You can use Azure Cosmos DB to quickly create and query key/value databses, document databses, and graph databases.  This approach benefits from the global distribution and horizontal scale capabilities at the core of Azure Cosmos DB.
 
 1. From the Azure portal menu or the **Home page**, select **+ Create a resource**.
@@ -152,8 +207,8 @@ It takes a few minutes to create the account.  Wait for the portal page to displ
 
 ![Screenshot of Cosmos DB Keys page.](images/01-Configuration/01D08-Keys.png)
 
-## Add Cosmos DB Primary Key to Key Vault (01E)
-1. Search for the Azure Key Vault you created in step 01B.
+### Add Cosmos DB Primary Key to Key Vault (01G)
+1. Search for the Azure Key Vault you created in step 01C.
 
 ![Screenshot of Cosmos Search.](images/01-Configuration/01E01-PortalSearch.png)
 
@@ -168,6 +223,7 @@ It takes a few minutes to create the account.  Wait for the portal page to displ
 4. Enter the following values:
 
 | Setting | Value |
+|---------|-------|
 | Name | A unique name for the secret you are creating. |
 | Secret Value | The primary key you copy from the Azure Cosmos DB page. |
 
@@ -186,14 +242,14 @@ It takes a few minutes to create the account.  Wait for the portal page to displ
 
 ![Screenshot of Key Vault secret version page.](images/01-Configuration/01E07-KeyVaultSecretVersion.png)
 
-## Initialize the GitHub Repo for the Workshop (O1F)
-1. Log into your GitHub account and create a new repository for the workshop
-2. From within your workshop repository, click on the **Settings** tab
-3. Click on the **Secrets and variables** menu item and then the **Actions** menu item
+### Initialize the GitHub Repo for the Workshop (O1H)
+1. Return to your *Order Processing System* GitHub repository
+1. From within your workshop repository, click on the **Settings** tab
+1. Click on the **Secrets and variables** menu item and then the **Actions** menu item
 
 ![](images/01-Configuration/01F01-GitHubActions.png)
 
-4. Click on the **New repository secret** button
+1. Click on the **New repository secret** button
 
 ![](images/01-Configuration/01F02-ActionSecrets.png)
 
@@ -251,19 +307,23 @@ jobs:
   "Cosmos": {
     "Uri": "{CosmosDBUri}"
   },
-  "ProductManagement": {
+  "Product": {
     "Cosmos": {
       "DatabaseId": "products",
       "Metadata": {
         "ContainerId": "metadata",
         "PartitionKey": "/metadataType"
       },
-      "ProductsByAvailability": {
-        "ContainerId": "productsByAvailability",
+      "Merchandise": {
+        "ContainerId": "merchandise",
+        "PartitionKey": "/id"
+      },
+      "MerchandiseByAvailability": {
+        "ContainerId": "merchandiseByAvailability",
         "PartitionKey": "/availabilityId"
       },
-      "ProductsByTheme": {
-        "ContainerId": "prorductsByTheme",
+      "MerchandiseByTheme": {
+        "ContainerId": "merchandiseByTheme",
         "PartitionKey": "/themeId"
       }
     }
@@ -271,7 +331,7 @@ jobs:
 }
 ~~~
 
-13. Replace *{CosmosDBUri}* with the URI value copied in step 01D
+13. Replace *{CosmosDBUri}* with the URI value copied in step 01E
 14. Click the **Commit changes** button
 15. Add a file named *config/secretreferences.json*
 16. Paste the following into the *config/secretreferences.json* file
@@ -284,7 +344,7 @@ jobs:
 }
 ~~~
 
-17. Replace *[SecretIdentifier]* with the secret identifier noted from step 01E without the version reference
+17. Replace *[SecretIdentifier]* with the secret identifier noted from step 01F without the version reference
 
 ![](images/01-Configuration/01F05-SecretReferences.png)
 

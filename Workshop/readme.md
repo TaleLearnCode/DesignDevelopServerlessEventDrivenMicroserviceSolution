@@ -1,4 +1,4 @@
-![DesignDevelopServerlessEventDrivenMicroserviceSolution](https://github.com/TaleLearnCode/DesignDevelopServerlessEventDrivenMicroserviceSolution/blob/main/Thumbnail.png)
+![Design and Develop a Serverless Event-Driven Microservice-Based Solution](https://github.com/TaleLearnCode/DesignDevelopServerlessEventDrivenMicroserviceSolution/blob/main/Thumbnail.png)
 
 # Design and Develop a Serverless Event-Driven Microservice-Based Solution Workshop
 
@@ -41,13 +41,14 @@ In this full-day hands-on workshop, attendees will dive into the exciting world 
 ## Technologies and Services
 This workshop leverages the following technologies and services (subject to change):
 
-- [Azure App Configuration](https://azure.microsoft.com/en-us/products/app-configuration/)
+- [Azure SQL](https://azure.microsoft.com/en-us/products/azure-sql/)
 - [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/)
 - [Azure Event Hubs](https://azure.microsoft.com/en-us/products/event-hubs/)
+- [Azure Service Bus](https://azure.microsoft.com/en-us/products/service-bus/)
 - [Azure Functions](https://azure.microsoft.com/en-us/products/functions/)
-- [Azure Logic Apps](https://azure.microsoft.com/en-us/products/logic-apps/)
+-	[Azure Communication Services](https://azure.microsoft.com/en-us/services/communication-services/)
+- [Azure App Configuration](https://azure.microsoft.com/en-us/products/app-configuration/)
 - [Azure KeyVault](https://azure.microsoft.com/en-us/products/key-vault/)
-- [Azure SQL](https://azure.microsoft.com/en-us/products/azure-sql/)
 - [GitHub Actions](https://learn.microsoft.com/en-us/azure/developer/github/github-actions?WT.mc_id=AZ-MVP-5004334)
 
 ## Prerequisites:
