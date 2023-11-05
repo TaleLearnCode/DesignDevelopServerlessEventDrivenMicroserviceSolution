@@ -1,9 +1,16 @@
-# 10 - Inventory Updated Notice
+# 10 - Inventory Updated Notice (Inventory)
 
 ## User Story
-When there is an update to the the inventory of a product, the Inventory system will send out an event message with details of the updated inventory so that subscribed systems can performed needed actions.
+When there is an update to the inventory of a product, the Inventory system will send out an event message with details of the updated inventory so that subscribed systems can performed needed actions.
 
-## Tasks
+### Definition of Done
+Event message indicating that the inventory has been updated is sent out.
+
+---
+
+## Workshop Exercises
+
+**Tasks**
 - 10A - [Turn on change tracking on the Inventory database](#turn-on-change-tracking-on-the-inventory-database-10a)
 - 10B - [Create Inventory Updated Event Hub](#create-inventory-updated-event-hub-10b)
 - 10C - [Add a shared access policy for Inventory to access the Inventory Updated event hub](#add-a-shared-access-policy-for-inventory-to-access-the-inventory-updated-event-hub-10c)

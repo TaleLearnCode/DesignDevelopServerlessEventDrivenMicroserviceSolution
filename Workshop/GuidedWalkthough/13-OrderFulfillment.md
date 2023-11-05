@@ -1,9 +1,16 @@
-# 13 - Order Fulfillment
+# 13 - Order Fulfillment (Shipping)
 
 ## User Story
 Once an order is shipped, the Shipping system will send out an OrderShippedMessage message.
 
-## Tasks
+### Definition of Done
+The Order Shipped message is sent to the Order Shipped event hub.
+
+---
+
+## Workshop Exercises
+
+**Tasks**
 -13A - [Create the Order Shipped event hub](#create-the-order-shipped-event-hub-13a)
 -13B - [Create the Shipping shared access policy](#create-the-shipping-shared-access-policy-13b)
 -13C - [Add the event hub connection string to Key Vault](#add-the-event-hub-connection-string-to-key-vault-13c)

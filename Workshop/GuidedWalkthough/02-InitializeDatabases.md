@@ -1,5 +1,20 @@
 #02 - Initialize Databases
-Now we will initialize the databases for use within the workshop.
+
+## User Story
+As the architect, I want to initialize the databases so that I can use them in the workshop.
+
+### Definition of Done
+- [ ] The Core database has been created and the schema and data have been initialized
+- [ ] The Inventory database has been created and the schema and data have been initialized
+- [ ] The Notice database has been created and the schema and data have been initialized
+- [ ]	The Purchase database has been created and the schema and data have been initialized
+- [ ] The Shipping database has been created and the schema and data have been initialized
+-	[ ] The database secrets have been added to Key Vault
+-	[ ] The App Config settings have been updated to use the Key Vault secrets
+
+---
+
+## Workshop Exercises
 
 **Tasks**
 - 02A - [Create the Core Database](#create-the-core-database-02a)
@@ -15,7 +30,7 @@ Now we will initialize the databases for use within the workshop.
 - 02K - [Add Key Vault reference to the App Config settings](#add-key-vault-reference-to-app-config-settings-02k)
 - 02L - [Add Azure SQL settings to App Config settings](#add-azure-sql-settings-to-app-config-settings-02L)
 
-## Create the Core Database (02A)
+### Create the Core Database (02A)
 1. Navigate to the [Azure Portal](https://portal.azure.com)
 1. Click the **Create a resource** button in the top left corner of the portal
 1. Search for **SQL Database** and click the **Create** button
@@ -41,7 +56,7 @@ Now we will initialize the databases for use within the workshop.
 
 ![Screenshot of the Azure SQL Networking page](/images/02-InitializeDatabases/02A01-Networking.png)
 
-## Create the Inventory Database (02B)
+### Create the Inventory Database (02B)
 1. Click the **Overview** button on the left side of the portal
 1. Click the **Create database** button
 1. Fill out the form with the following values:
@@ -55,7 +70,7 @@ Now we will initialize the databases for use within the workshop.
 
 ![Screenshot of the Azure SQL Server page](/images/02-InitializeDatabases/02B01-ServerName.png)
 
-## Create the Notice Database (02C)
+### Create the Notice Database (02C)
 1. Click the **Create database** button
 1. Fill out the form with the following values:
 		- **Database name**: Enter a name for your database
@@ -66,7 +81,7 @@ Now we will initialize the databases for use within the workshop.
 1. Click the **Go to resource** button
 1. Click the **Server name** link
 
-## Create the Purchase Database (02D)
+### Create the Purchase Database (02D)
 1. Click the **Create database** button
 1. Fill out the form with the following values:
 		- **Database name**: Enter a name for your database
@@ -77,7 +92,7 @@ Now we will initialize the databases for use within the workshop.
 1. Click the **Go to resource** button
 1. Click the **Server name** link
 
-## Create the Shipping Database (02E)
+### Create the Shipping Database (02E)
 1. Click the **Create database** button
 1. Fill out the form with the following values:
 		- **Database name**: Enter a name for your database
@@ -88,7 +103,7 @@ Now we will initialize the databases for use within the workshop.
 1. Click the **Go to resource** button
 1. Click the **Server name** link
 
-## Initialize the Core Database Schema and Data (02F)
+### Initialize the Core Database Schema and Data (02F)
 1. From the database listing, click on the *Core* database that you created
 1. Hover over the **Server name** link and click the **Copy** button
 1. From Visual Studio, right click on the *Core.Database* project and select **Publish**
@@ -109,7 +124,7 @@ Now we will initialize the databases for use within the workshop.
 
 1. CLick the **Publish** button
 
-## Initialize the Inventory Database Schema and Data (02G)
+### Initialize the Inventory Database Schema and Data (02G)
 1. From Visual Studio, right click on the *Inventory.Database* project and select **Publish**
 1. The **Publish Database** window will appear, click the **Edit** button
 1. From the **History** tab, click on the **Core** database you just used
@@ -122,7 +137,7 @@ Now we will initialize the databases for use within the workshop.
 
 1. CLick the **Publish** button
 
-## Initialize the Notice Database Schema and Data (02H)
+### Initialize the Notice Database Schema and Data (02H)
 1. From Visual Studio, right click on the *Notice.Database* project and select **Publish**
 1. The **Publish Database** window will appear, click the **Edit** button
 1. From the **History** tab, click on the **Inventory** database you just used
@@ -132,7 +147,7 @@ Now we will initialize the databases for use within the workshop.
 1. Click the **OK** button
 1. CLick the **Publish** button
 
-## Initialize the Purchase Database Schema and Data (02I)
+### Initialize the Purchase Database Schema and Data (02I)
 1. From Visual Studio, right click on the *Purchase.Database* project and select **Publish**
 1. The **Publish Database** window will appear, click the **Edit** button
 1. From the **History** tab, click on the **Notice** database you just used
@@ -142,7 +157,7 @@ Now we will initialize the databases for use within the workshop.
 1. Click the **OK** button
 1. CLick the **Publish** button
 
-## Initialize the Shipping Database Schema and Data (02I)
+### Initialize the Shipping Database Schema and Data (02I)
 1. From Visual Studio, right click on the *Shipping.Database* project and select **Publish**
 1. The **Publish Database** window will appear, click the **Edit** button
 1. From the **History** tab, click on the **Shipping** database you just used
@@ -152,7 +167,7 @@ Now we will initialize the databases for use within the workshop.
 1. Click the **OK** button
 1. CLick the **Publish** button
 
-## Add database secrets to Key Vault (02J)
+### Add database secrets to Key Vault (02J)
 1. Navigate to the [Azure Portal](https://portal.azure.com)
 1. Open the previously created Key Vault account
 1. Click the **Secrets** option on the left-hand menu
@@ -175,7 +190,7 @@ Now we will initialize the databases for use within the workshop.
 
 9. Click the **Create** button
 
-## Add Key Vault reference to the App Config settings (02K)
+### Add Key Vault reference to the App Config settings (02K)
 1. Navigate to the GitHub repository you created for the workshop
 1. Edit the **OrderProcessingSystem/config/secretreferences.json** file
 1. Add the AzureSql:UserId and AzureSql:Password elements
@@ -189,7 +204,7 @@ Now we will initialize the databases for use within the workshop.
 
 4. Click the **Commit changes...** button
 
-## Add Azure SQL settings to App Config settings (02L)
+### Add Azure SQL settings to App Config settings (02L)
 1. Edit the **OrderProcessingSystem/config/appsettings.json** file
 1. Add the AzureSql:DataSource, Core:AzureSql:Catalog, Inventory:AzureSql:Catalog, Notice:AzureSql:Catalog, Purchase:AzureSql:Catalog, and Shipping:AzureSql:Catalog elements
 

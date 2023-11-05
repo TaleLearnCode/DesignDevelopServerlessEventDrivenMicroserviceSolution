@@ -1,9 +1,17 @@
-# 08 - Update Purchase Status on Inventory Reserve
+# 08 - Update Purchase Status on Inventory Reserve (Inventory)
 
 ## User Story
 After receiving a notification from the Inventory system that the inventory has been reserved for an order, the Purchase system will update the status of the purchase line item. If all of the line items for the purchase have been updated, then the purchase status will be updated.
 
-## Tasks
+### Definition of Done
+- The appropriate purchase line item is updated with the reserved status
+- If all of the purchase line items have been updated, then the purchase status is updated
+
+---
+
+## Workshop Exercises
+
+**Tasks**
 - 08A - [Add consumer group for Purchase on the Inventory Reserved Event Hub](#add-consumer-group-for-purchase-on-the-invnetory-reserved-event-hub-08a)
 - 08B - [Add service logic for user story](#add-service-logic-for-user-story-08b)
 - 08C - [Create an Azure Function to trigger the purchase update upon inventory being reserved](#create-an-azure-function-to-trigger-the-purchase-update-upon-inventory-being-reserved-08c

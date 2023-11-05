@@ -3,7 +3,25 @@
 ## User Story
 After receiving a notification from the Purchase system that a purchase has been made, the Inventory system will reserved the purchase products and send a notification of such.
 
-## Tasks
+### Definition of Done
+- [ ] A new Inventory.InventoryTransaction record is created with the InventoryActionId of ReservedForOrder
+- [ ] A new Inventory.InventoryReserved message is sent to the Inventory Reserved Event Hub
+- [ ] The Inventory.InventoryReserved message contains the following information:
+	- [ ] CustomerId
+	- [ ] OrderId
+	- [ ] ProductId
+	- [ ] ProductName
+	- [ ] QuantityOnHand
+	- [ ] Backordered
+	
+- An Inventory Transaction record is created to reserve the inventory for the order
+- An Inventory Reserved message is sent to the Inventory Reserved Event Hub
+
+---
+
+## Workshop Exercises
+
+**Tasks**
 - 07A - [Add a shared access policy for Inventory to access the Place Order Service Bus queue](#add-a-shared-access-policy-for-inventory-to-access-the-place-order-service-bus-queue-07a)
 - 07B - [Create the Inventory Reserved Event Hub](#create-the-inventory-reseved-event-hub-07b)
 - 07C - [Add a shared access policy for Inventory to access the Inventory Reserved Event Hub](#add-a-shared-access-policy-for-inventory-to-access-the-inventory-reserved-event-hub-07c)

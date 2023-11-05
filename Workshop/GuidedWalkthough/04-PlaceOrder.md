@@ -1,12 +1,18 @@
 # 04 - Place Order (Purchase)
 
 ## User Story
-When a customer places an order, the **Purchase** system receives the order and performs the following steps:
-- Saves the order details to the Purchase database
-- Sends the order details to the **Order Placed** *Service Bus* queue
-- Sends the order details to the **Order Placed** *Event Hub*
+The Purchase system receives the purchase order details from the e-commerce website, saves the data, and initiates the order processing workflow.
 
-## Tasks
+### Definition of Done
+- The customer order is saved to the Purchase database
+- The Order Placed message is sent to the appropriate Service Bus queue
+- The Order Placed message is sent to the appropriate Event Hub
+
+---
+
+## Workshop Exercises
+
+**Tasks**
 - 04A - [Create the Service Bus namespace](#create-the-service-bus-namespace-04a)
 - 04B - [Create the Place Order Service Bus queue](#create-the-service-bus-queue-04b)
 - 04C - [Add a shared access policy for Purchase to access the Place Order Service Bus queue](#add-a-shared-access-policy-for-purchase-to-access-the-place-order-service-bus-queue-04c)

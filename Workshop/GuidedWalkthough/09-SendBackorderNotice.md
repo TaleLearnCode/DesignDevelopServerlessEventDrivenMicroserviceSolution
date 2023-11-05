@@ -1,9 +1,16 @@
-# 09 - Send Backorder Notice
+# 09 - Send Backorder Notice (Notice)
 
 ## User Story
 The Notice system monitors the Inventory Reserved messages looking for backorder notices. Upon receiving a backorder notice, the Notice system will send the customer informing them that the order has been backordered.
 
-## Tasks
+### Definition of Done
+The Notice system will send an email to the customer informing them that the order has been backordered.
+
+---
+
+## Workshop Exercises
+
+**Tasks**
 - 09A - [Add consumer group for Notice on the Inventory Reserved Event Hub](#add-consumer-group-for-nootice-on-the-inventory-reserved-event-hub-09a)
 - 09B - [Add service logic for user story](#add-service-logic-for-user-story-09b)
 - 09C - [Create an Azure Function to watch for backorder notices](#create-an-azure-function-to-watch-for-backorder-notices-09c)

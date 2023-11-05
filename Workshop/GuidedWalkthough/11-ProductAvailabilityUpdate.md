@@ -1,4 +1,4 @@
-# 11 - Product Availability Update
+# 11 - Product Availability Update (Product)
 
 ## User Story
 When the Product service receives an Inventory Updated event message, the affected product availability will be updated.  The updated product availability will be based upon the following:
@@ -9,7 +9,14 @@ When the Product service receives an Inventory Updated event message, the affect
 | Less than 1 but more than -10 | Backordered            |
 | Less than -10                 | Temporary Out of Stock |
 
-## Tasks
+### Definition of Done
+The Product database is updated with the appropriate product availability.
+
+---
+
+## Workshop Exercises
+
+**Tasks**
 - 11A - [Add consumer group for Product on the Inventory Updated Event Hub](#add-consumer-group-for-product-on-the-invnetory-updated-event-hub-11a)
 - 11B - [Add a shared access policy for Purchase to access the Inventory Reserved event hub](#add-a-shared-access-policy-for-purchase-to-access-th-inventory-reserved-event-hub-11b)
 - 11C - [Create an Azure Function to watch for inventory updated notices](#create-an-azure-function-to-watch-for-inventory-updated-notices-11c)

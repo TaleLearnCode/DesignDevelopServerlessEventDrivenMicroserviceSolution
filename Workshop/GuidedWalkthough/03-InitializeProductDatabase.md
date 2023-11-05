@@ -1,15 +1,26 @@
 #03 - Initialize Product Database
+
+## User Story
+As a product manager, I want to be able to manage the products that are available for purchase.
+
+### Definition of Done
+- The product database is created
+- The product database data is loaded
+- The product database change feed triggers are created
+
+---
+
 The product database is hosted on Cosmos DB. During this step of the workshop, we will initialize that database's data.
 
 **Tasks**
-- 03A - [Create the Products database](#create-the-products-database-03a)
-- 03B - [Create the database containers](#create-the-database-containers-03b)
+- 03A -	[Create the Products database](#create-the-products-database-03a)
+- 03B -	[Create the database containers](#create-the-database-containts-03b)
 - 03C - [Create Cosmos DB Change Feed Triggers](#create-cosmos-db-change-feed-triggers-03c)
-- 03D - 
+- 03D -	[Run the load product database process](#run-the-load-product-database-process-03d)
 
 At the completion of the tasks, you should commit the changes to your GitHub repository.
 
-## Create the Products database (03A)
+### Create the Products database (03A)
 1. From the	[Azure Portal](https://portal.azure.com), click the Cosmos DB account you previously created
 
 ![Screenshot of the Azure Portal](images/03-InitializeProductDatabase/03A01-AzurePortal.png)
@@ -18,7 +29,7 @@ At the completion of the tasks, you should commit the changes to your GitHub rep
 1. From the **New Container** dropdown button, select **New Database**
 1. Enter **products** as the **Database id** and click **OK**
 
-## Create the database containers (03B)
+### Create the database containers (03B)
 **Merchandise Container**
 1. Hover over the **products** database and click the **New Container** button
 1. Enter **merchandise** as the **Container id**
@@ -49,7 +60,7 @@ After creating your containers, you Data Explorer should look like this:
 
 ![Screenshot of the Data Explorer](images/03-InitializeProductDatabase/03B06-DataExplorer.png)
 
-## Create Cosmos DB Change Feed Triggers (03C)
+### Create Cosmos DB Change Feed Triggers (03C)
 1. From Visual Studio, right click the Product solution folder and select **Add -> New Project**
 1. Search for **Azure Functions**, select the **Azure Functions** template, and click the **Next** button
 
@@ -270,7 +281,7 @@ public class MerchandiseChangeMonitor
 }
 ```
 
-## Run the load product database process (03C)
+### Run the load product database process (03D)
 1. Open the **Program.cs** file in the **Product.LoadDatabase** project
 1. On line 12, replace **appConfigEndpoint** with the App Configuration endpoint you created in the previous step
 1. Right-click on the **OrderProcessingSystem** solution and select **Configure Startup Projects**

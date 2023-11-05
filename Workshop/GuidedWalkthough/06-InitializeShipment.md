@@ -1,9 +1,16 @@
-# 06 - Initialize Shipment
+# 06 - Initialize Shipment (Shipping)
 
 ## User Story
 When an order is placed, the Shipping services initializes the shipping record so the shipping department can forecast upcoming work.
 
-## Tasks
+### Definition of Done
+- A new shipment record is created in the Shipping database
+
+---
+
+## Workshop Exercises
+
+**Tasks**
 - 06A - [Add consumer group for Shipping on the Order Placed event hub](add-consumer-group-for-shipping-on-the-order-placed-event-hub-06a)
 - 06B - [Add a shared access policy for Shipping to access the Order Placed event hub](#add-a-shared-access-policy-for-shipping-to-access-the-order-placed-event-hub-06b)
 - 06C - [Add service logic for user story](#add-service-logic-for-user-story-06c)

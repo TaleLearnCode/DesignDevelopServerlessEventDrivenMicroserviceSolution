@@ -1,0 +1,156 @@
+<mxfile host="app.diagrams.net" modified="2023-11-05T17:44:34.265Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" etag="Ta2JdCTwXxa67I5i85zX" version="22.0.8" type="device">
+  <diagram name="Page-1" id="wARwOuGG-aOOY7oY1ro6">
+    <mxGraphModel dx="1224" dy="1097" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-40" value="Core" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="80" width="259" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-13" value="Core" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.sql_database_sql_azure;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-40">
+          <mxGeometry x="20" y="40" width="57.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-29" value="App Config" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/App_Configuration.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-40">
+          <mxGeometry x="100" y="45.5" width="50" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-30" value="Key Vault" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Key_Vaults.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-40">
+          <mxGeometry x="180" y="45.5" width="48" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-42" value="Inventory" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="289" y="80" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-79" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ZPn1W_9qD31b8-gQvMEh-42" source="ZPn1W_9qD31b8-gQvMEh-14" target="ZPn1W_9qD31b8-gQvMEh-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-14" value="Inventory" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.sql_database_sql_azure;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-42">
+          <mxGeometry x="20" y="34.5" width="57.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-80" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.354;entryY=1.12;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="ZPn1W_9qD31b8-gQvMEh-42" source="ZPn1W_9qD31b8-gQvMEh-53" target="ZPn1W_9qD31b8-gQvMEh-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-53" value="Inventory&lt;br&gt;Updated" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/compute/Function_Apps.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-42">
+          <mxGeometry x="15" y="140" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-54" value="Order&lt;br&gt;Placed&lt;br&gt;Monitor" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/compute/Function_Apps.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-42">
+          <mxGeometry x="96" y="140" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-62" value="Inventory&lt;br&gt;Reserved" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Event_Hubs.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-42">
+          <mxGeometry x="112" y="40" width="48" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-63" value="Inventory&lt;br&gt;Updated" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Event_Hubs.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-42">
+          <mxGeometry x="192" y="40" width="48" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-43" value="Notice" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="569" y="80" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-15" value="Notice" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.sql_database_sql_azure;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-43">
+          <mxGeometry x="20" y="34.5" width="57.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-39" value="ACS" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/other/Azure_Communication_Services.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-43">
+          <mxGeometry x="100" y="40" width="68" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-55" value="Invnetory&lt;br&gt;Reserved&lt;br&gt;Monitor" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/iot/Function_Apps.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-43">
+          <mxGeometry x="10" y="140" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-56" value="Place&lt;br&gt;Order&lt;br&gt;Monitor" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/compute/Function_Apps.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-43">
+          <mxGeometry x="96" y="140" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-44" value="Product" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="390" width="266" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-66" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.618;entryY=0.02;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" edge="1" parent="ZPn1W_9qD31b8-gQvMEh-44" source="ZPn1W_9qD31b8-gQvMEh-12" target="ZPn1W_9qD31b8-gQvMEh-50">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="146" y="72" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-67" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="ZPn1W_9qD31b8-gQvMEh-44" source="ZPn1W_9qD31b8-gQvMEh-12" target="ZPn1W_9qD31b8-gQvMEh-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-12" value="Product Database" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/Azure_Cosmos_DB.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-44">
+          <mxGeometry x="30" y="40" width="64" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-47" value="Inventory&lt;br&gt;Updated&lt;br&gt;Monitor" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/iot/Function_Apps.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-44">
+          <mxGeometry x="33.660000000000025" y="150" width="56.67" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-49" value="Merchandise&lt;br&gt;Change&lt;br&gt;Monitor" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/iot/Function_Apps.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-44">
+          <mxGeometry x="101.16" y="150" width="56.67" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-50" value="Metadata&lt;br&gt;Change&lt;br&gt;Monitor" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/iot/Function_Apps.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-44">
+          <mxGeometry x="180" y="150" width="56.67" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-45" value="Purchase" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="289" y="390" width="261" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-16" value="Purchase" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.sql_database_sql_azure;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-45">
+          <mxGeometry x="12.5" y="40" width="57.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-36" value="Place Order" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Event_Hubs.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-45">
+          <mxGeometry x="100" y="40" width="48" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-38" value="Order Placed" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Service_Bus.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-45">
+          <mxGeometry x="190" y="40" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-57" value="Inventory&lt;br&gt;Reserved&lt;br&gt;Monitor" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/compute/Function_Apps.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-45">
+          <mxGeometry x="7.25" y="140" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-74" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ZPn1W_9qD31b8-gQvMEh-45" source="ZPn1W_9qD31b8-gQvMEh-58" target="ZPn1W_9qD31b8-gQvMEh-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-76" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ZPn1W_9qD31b8-gQvMEh-45" source="ZPn1W_9qD31b8-gQvMEh-58" target="ZPn1W_9qD31b8-gQvMEh-38">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="212" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-58" value="Place&lt;br&gt;Order" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/compute/Function_Apps.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-45">
+          <mxGeometry x="90" y="140" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-46" value="Shipping" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="569" y="390" width="261" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-17" value="Shipping" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.sql_database_sql_azure;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-46">
+          <mxGeometry x="20" y="30" width="47.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-59" value="Inventory&lt;br&gt;Reserved&lt;br&gt;Monitor" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/compute/Function_Apps.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-46">
+          <mxGeometry x="10" y="145" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-60" value="Order&lt;br&gt;Placed&lt;br&gt;Monitor" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/compute/Function_Apps.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-46">
+          <mxGeometry x="96" y="140" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-84" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ZPn1W_9qD31b8-gQvMEh-46" source="ZPn1W_9qD31b8-gQvMEh-61" target="ZPn1W_9qD31b8-gQvMEh-64">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="225" y="60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-61" value="Update&lt;br&gt;Shipping&lt;br&gt;Status" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/compute/Function_Apps.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-46">
+          <mxGeometry x="191" y="140" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-64" value="Order&lt;br&gt;Shipped" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Event_Hubs.svg;" vertex="1" parent="ZPn1W_9qD31b8-gQvMEh-46">
+          <mxGeometry x="106" y="35" width="48" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-70" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.677;entryY=-0.04;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ZPn1W_9qD31b8-gQvMEh-63" target="ZPn1W_9qD31b8-gQvMEh-47">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="338" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-71" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZPn1W_9qD31b8-gQvMEh-62" target="ZPn1W_9qD31b8-gQvMEh-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-72" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZPn1W_9qD31b8-gQvMEh-62" target="ZPn1W_9qD31b8-gQvMEh-55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-73" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZPn1W_9qD31b8-gQvMEh-36" target="ZPn1W_9qD31b8-gQvMEh-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-77" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZPn1W_9qD31b8-gQvMEh-62" target="ZPn1W_9qD31b8-gQvMEh-59">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-78" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZPn1W_9qD31b8-gQvMEh-36" target="ZPn1W_9qD31b8-gQvMEh-60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPn1W_9qD31b8-gQvMEh-81" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;Order Processing System&lt;/b&gt;&lt;/font&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="10" y="40" width="280" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

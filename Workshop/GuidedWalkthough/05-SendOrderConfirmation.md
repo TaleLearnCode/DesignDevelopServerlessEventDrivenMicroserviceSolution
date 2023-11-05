@@ -3,7 +3,15 @@
 ## User Story
 After receiving a notification from the Purchase system that a purchase has been made, the Notice system will send the customer an email confirming the order. The email confirmation shall be logged for compliance reasons.
 
-## Tasks
+### Definition of Done
+- The Notice system shall send an email confirmation to the customer.
+- The Notice system shall log the email confirmation for compliance reasons.
+
+---
+
+## Workshop Exercises
+
+**Tasks**
 - 05A - [Create a consumer group for Notice on the Place Order event hub](#create-a-consumer-group-for-notice-on-the-place-order-event-hub-05a)
 - 05B - [Add a shared access policy for Notice to access the Place Order event hub](#add-a-shared-access-policy-for-notice-to-access-the-place-order-event-hub-05a)
 - 05C - [Create the Email Communication Service resource](#create-the-email-communication-service-resource-05b)
