@@ -1,4 +1,4 @@
-# 12 - Order Fulfillment
+# 12 - Start Picking Order
 
 ## User Story
 When the Shipping services receives an Inventory Reserved message, the order is picked for shipment.
@@ -8,7 +8,7 @@ When the Shipping services receives an Inventory Reserved message, the order is 
 - 12B - [Add a shared access policy for Shipping to access the Inventory Reserved event hub](#add-a-shared-access-policy-for-shipping-to-access-the-inventory-reserved-event-hub-12b)
 - 12C - [Add service logic for user story](#add-service-logic-for-user-story-12c)
 - 12D - [Create an Azure Function to watch for inventory reserved notices](#create-an-azure-function-to-watch-for-inventory-reserved-notices-12d)
-- 12E - [Test the Product Availability Update User Story](#test-the-product-availability-update-user-story-12e)
+- 12E - [Test the Start Picking Order User Story](#test-the-start-picking-order-user-story-12e)
 
 ### Add consumer group for Shipping on the Inventory Reserved Event Hub (12A)
 1. From the [Azure Portal](https://azure.portal.com), navigate to the Event Hub namespace created from the workshop.
@@ -34,7 +34,7 @@ When the Shipping services receives an Inventory Reserved message, the order is 
 
 ### Add service logic for user story (12C)
 1. From Visual Studio, open the **ShippingServices.cs** file.
-1. Add the **StartPickingOrderAsync** method to the NoticeServices class.
+1. Add the **StartPickingOrderAsync** method to the ShippingServices class.
 
 ~~~
 public async Task StartPickingOrderAsync(string orderId)
@@ -126,7 +126,7 @@ public class InventoryReservedMonitor
 }
 ~~~
 
-### Test the Product Availability Update User Story (12E)
+### Test the Start Picking Order User Story (12E)
 1. Open Postman and create a new request
 1. Change the HTTP verb to **Post**
 1. Paste the **PlaceOrder** endpoint URL
