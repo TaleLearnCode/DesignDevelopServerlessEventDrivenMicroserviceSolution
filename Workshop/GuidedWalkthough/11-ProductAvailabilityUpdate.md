@@ -15,8 +15,6 @@ When the Product service receives an Inventory Updated event message, the affect
 - 11C - [Create an Azure Function to watch for inventory updated notices](#create-an-azure-function-to-watch-for-inventory-updated-notices-11c)
 - 11D - [Test the Product Availability Update User Story](#test-the-product-availability-update-user-story-11d)
 
-
-
 ### Add consumer group for Product on the Inventory Updated Event Hub (11A)
 1. From the [Azure Portal](https://azure.portal.com), navigate to the Event Hub namespace created from the workshop.
 1. Click on the **Inventory Updated** event hub from the **Event Hubs** listing.
@@ -50,8 +48,8 @@ When the Product service receives an Inventory Updated event message, the affect
 
 | Field                          | Value                             |
 |--------------------------------|-----------------------------------|
-| Connection string setting name | InventoryReservedConnectionString |
-| Event Hub name                 | %InventorReservedEventHub%        |
+| Connection string setting name | InventoryUpdatedConnectionString |
+| Event Hub name                 | %InventorUpdatedEventHub%        |
 
 ![Screenshot of the New Azure Function dialog](images/10-ProductAvailabilityUpdate/new-azure-function.png)
 
@@ -151,20 +149,6 @@ public class InventoryUpdatedMonitor
 1. Add the InventoryReservedConnectionString, InventoryReservedEventHub, and InventoryReservedConsumerGroup values.
 
 ~~~
-{
-  "IsEncrypted": false,
-  "Values": {
-    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-    "AppConfigEndpoint": "{APP_CONFIG_ENDPOINT}",
-    "PlaceOrderConnectionString": "{PLACE_ORDER_EVENT_HUB_CONNECTION_STRING}",
-    "PlaceOrderEventHub": "{PLACE_ORDER_EVENT_HUB_NAME}"
-    "InventoryReservedConnectionString": "{INVENTORY_RESERVED_EVENT_HUB_CONNECTION_STRING}",
-    "InventoryReservedEventHub": "{INVENTORY_RESERVED_EVENT_HUB_NAME}",
-    "InventoryReservedConsumerGroup": "purchase"
-  }
-}
-
 {
   "IsEncrypted": false,
   "Values": {
