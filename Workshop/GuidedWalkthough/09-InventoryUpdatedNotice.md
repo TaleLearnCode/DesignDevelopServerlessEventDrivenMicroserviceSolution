@@ -4,7 +4,12 @@
 When there is an update to the the inventory of a product, the Inventory system will send out an event message with details of the updated inventory so that subscribed systems can performed needed actions.
 
 ## Tasks
-
+- 09A - [Turn on change tracking on the Inventory database](#turn-on-change-tracking-on-the-inventory-database-09a)
+- 09B - [Create Inventory Updated Event Hub](#create-inventory-updated-event-hub-09b)
+- 09C - [Add a shared access policy for Inventory to access the Inventory Updated event hub](#add-a-shared-access-policy-for-inventory-to-access-the-inventory-updated-event-hub-09c)
+- 09D - [Add service logic for user story](#add-service-logic-for-user-story-09d)
+- 09E - [Create an Azure Function to watch for changes to the Inventory.InventoryTransaction table](#create-an-azure-function-to-watch-for-changes-to-the-inventory.inventorytransaction-table-09e)
+- 09F - [Test the Inventory Updated Notice User Story](#test-the-inventory-updated-notice-user-story-09f)
 
 ### Turn on change tracking on the Inventory database (09A)
 1. Execute the **EnableChangeTracking.sql** file from the **Inventory.Database** project on the **Inventory** database.
@@ -79,7 +84,7 @@ When there is an update to the the inventory of a product, the Inventory system 
 4. Click the **Commit changes...** button
 1. Verify that the AppConfig GitHub Action completed successfully
 
-### Add service logic for user story (09C)
+### Add service logic for user story (09D)
 1. From Visual Studio, open the **InventoryServices.cs** file.
 1. Add the **GetInventoryStatusAsync** method to the InventoryServices class.
 
@@ -105,7 +110,7 @@ public async Task InventoryUpdatedAsync(string productId)
 }
 ~~~
 
-### Create an Azure Function to watch for changes to the Inventory.InventoryTransaction table (9D)
+### Create an Azure Function to watch for changes to the Inventory.InventoryTransaction table (9E)
 1. From Visual Studio, right-click on the **Functions** folder within the **Inventory.Functions** folder and click the **Add > New Azure Function**
 1. Enter **InventoryUpdated.cs** for the name of the new Azure Function class.
 
@@ -175,7 +180,7 @@ public class InventoryUpdated
 }
 ~~~
 
-### Inventory Updated Notice (09E)
+### Test the Inventory Updated Notice User Story (09F)
 1. Open Postman and create a new request
 1. Change the HTTP verb to **Post**
 1. Paste the **PlaceOrder** endpoint URL
