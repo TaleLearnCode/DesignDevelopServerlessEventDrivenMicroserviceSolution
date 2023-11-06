@@ -4,13 +4,13 @@
 As the architect, I want to initialize the databases so that I can use them in the workshop.
 
 ### Definition of Done
-- [ ] The Core database has been created and the schema and data have been initialized
-- [ ] The Inventory database has been created and the schema and data have been initialized
-- [ ] The Notice database has been created and the schema and data have been initialized
-- [ ]	The Purchase database has been created and the schema and data have been initialized
-- [ ] The Shipping database has been created and the schema and data have been initialized
--	[ ] The database secrets have been added to Key Vault
--	[ ] The App Config settings have been updated to use the Key Vault secrets
+- The Core database has been created and the schema and data have been initialized
+- The Inventory database has been created and the schema and data have been initialized
+- The Notice database has been created and the schema and data have been initialized
+- The Purchase database has been created and the schema and data have been initialized
+- The Shipping database has been created and the schema and data have been initialized
+-	The database secrets have been added to Key Vault
+-	The App Config settings have been updated to use the Key Vault secrets
 
 ---
 
@@ -35,16 +35,16 @@ As the architect, I want to initialize the databases so that I can use them in t
 1. Click the **Create a resource** button in the top left corner of the portal
 1. Search for **SQL Database** and click the **Create** button
 1. Fill out the form with the following values:
-		- **Subscription**: Select the appropriate Azure subscription
-		- **Resource Group**: Select the resource group you created in the previous section
-		- **Database name**: Enter a name for your database
-		- **Server**: Click **Create new** and enter a name for your server
+    - **Subscription**: Select the appropriate Azure subscription
+    - **Resource Group**: Select the resource group you created in the previous section
+    - **Database name**: Enter a name for your database
+    - **Server**: Click **Create new** and enter a name for your server
     - **Authentication method**: Select **Use SQL authentication**
-		- **Server admin login**: Enter a username for your server
-		- **Password**: Enter a password for your server
-		- **Location**: Select the location you used for your resource group
-		- **Want to use SQL elastic pool?**: Select **No**
-		- **Workload environment**: Select **Development**
+    - **Server admin login**: Enter a username for your server
+    - **Password**: Enter a password for your server
+    - **Location**: Select the location you used for your resource group
+    - **Want to use SQL elastic pool?**: Select **No**
+    - **Workload environment**: Select **Development**
 1. Click the **Review + create** button
 1. CLick the **Create** button
 1. After the database has been created, click on the **Go to Resource** button
@@ -60,9 +60,9 @@ As the architect, I want to initialize the databases so that I can use them in t
 1. Click the **Overview** button on the left side of the portal
 1. Click the **Create database** button
 1. Fill out the form with the following values:
-		- **Database name**: Enter a name for your database
-		- **Want to use SQL elastic pool?**: Select **No**
-		- **Workload environment**: Select **Development**
+    - **Database name**: Enter a name for your database
+    - **Want to use SQL elastic pool?**: Select **No**
+    - **Workload environment**: Select **Development**
 1. Click the **Review + create** button
 1. CLick the **Create** button
 1. Click the **Go to resource** button
@@ -73,9 +73,9 @@ As the architect, I want to initialize the databases so that I can use them in t
 ### Create the Notice Database (02C)
 1. Click the **Create database** button
 1. Fill out the form with the following values:
-		- **Database name**: Enter a name for your database
-		- **Want to use SQL elastic pool?**: Select **No**
-		- **Workload environment**: Select **Development**
+    - **Database name**: Enter a name for your database
+    - **Want to use SQL elastic pool?**: Select **No**
+    - **Workload environment**: Select **Development**
 1. Click the **Review + create** button
 1. CLick the **Create** button
 1. Click the **Go to resource** button
@@ -84,9 +84,9 @@ As the architect, I want to initialize the databases so that I can use them in t
 ### Create the Purchase Database (02D)
 1. Click the **Create database** button
 1. Fill out the form with the following values:
-		- **Database name**: Enter a name for your database
-		- **Want to use SQL elastic pool?**: Select **No**
-		- **Workload environment**: Select **Development**
+    - **Database name**: Enter a name for your database
+    - **Want to use SQL elastic pool?**: Select **No**
+    - **Workload environment**: Select **Development**
 1. Click the **Review + create** button
 1. CLick the **Create** button
 1. Click the **Go to resource** button
@@ -95,9 +95,9 @@ As the architect, I want to initialize the databases so that I can use them in t
 ### Create the Shipping Database (02E)
 1. Click the **Create database** button
 1. Fill out the form with the following values:
-		- **Database name**: Enter a name for your database
-		- **Want to use SQL elastic pool?**: Select **No**
-		- **Workload environment**: Select **Development**
+    - **Database name**: Enter a name for your database
+    - **Want to use SQL elastic pool?**: Select **No**
+    - **Workload environment**: Select **Development**
 1. Click the **Review + create** button
 1. CLick the **Create** button
 1. Click the **Go to resource** button
@@ -138,7 +138,12 @@ As the architect, I want to initialize the databases so that I can use them in t
 1. CLick the **Publish** button
 
 ### Initialize the Notice Database Schema and Data (02H)
-1. From Visual Studio, right click on the *Notice.Database* project and select **Publish**
+
+**NOTE:** This step has slightly different instructions than the previous two steps.
+
+1. From Visual Studio, open the **Populate_Customer.sql** file in the **Notice.Database** project under the ~\Purchase\Scripts\Populate~ folder.
+1. Change the email address for the first customer to your email address. This way you will receive the emails as we go through the workshop.
+1. Right click on the *Notice.Database* project and select **Publish**
 1. The **Publish Database** window will appear, click the **Edit** button
 1. From the **History** tab, click on the **Inventory** database you just used
 1. Click **Show Connection Properties**
