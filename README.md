@@ -67,7 +67,7 @@ Hands-on full-day workshop where you will design, develop, and publish a serverl
 
 | Event | Location | Date | Time | Room | Downloads |
 |-------|:--------:|-----:|-----:|-----:|----------:|
-| [Beer City Code](https://www.beercitycode.com/) | Grand Rapids, MI | August 4, 2023 | 9:00 am EDT | Room 264 | Available Afterwards |
-| [dev up](https://www.devupconf.org/) (Canceled) | St. Charles, MO | August 30, 2023 | 8:30 am CDT| Junior Ballroom C | Available Afterwards |
+| [CodeMash](https://codemash.org/session-details/?id=532679) | Sandusky, OH | January 10, 2024 | 8:00 AM EST | Cyrpus | Available Afterwards |
 | [TechBash](https://techbash.com/) | Pocono Manor, PA | November 7, 2023 | TBA | TBA | Available Afterwards |
-| [CodeMash](https://codemash.org/session-details/?id=532679) | Sandusky, OH | January 10, 2024 | TBA | TBA | Available Afterwards |
+| [dev up](https://www.devupconf.org/) (Canceled) | St. Charles, MO | August 30, 2023 | 8:30 am CDT| Junior Ballroom C | Available Afterwards |
+| [Beer City Code](https://www.beercitycode.com/) | Grand Rapids, MI | August 4, 2023 | 9:00 am EDT | Room 264 | Available Afterwards |
